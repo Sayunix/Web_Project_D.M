@@ -1,0 +1,75 @@
+.grid-container {
+
+    display: grid;
+    grid-template-columns:  1fr 6fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+            "c1 c1 "
+            "c2 c3 "
+            "c4 c4 "
+            "c5 c5 "; }
+
+#header { grid-area: c1; }
+#nav { grid-area: c2; }
+#main { grid-area: c3; }
+#footer { grid-area: c4; }
+#aside { grid-area: c5;}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #046A41;
+    font-family: "Calibri Light";
+}
+
+.container {
+    display: inline; /* or inline-flex */
+}
+
+main {
+    text-align: left;
+    background-color: white;
+
+}
+
+head  {
+    text-align: center;
+
+}
+
+nav {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+
+
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+h1{
+    display: inline;
+    font-family: "Calibri Light", sans-serif;
+    font-size: 40px ;
+}
+
+ul {
+    list-style-type: none;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+
+li a:hover {
+    background-color: black;
+    color:#046A41;
+}
+
+
+
+li a {
+    display: block;
+}
