@@ -186,11 +186,10 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(40vh - 50px); /*height: calc(100vh - 40px); previously*/
+  height: calc(65vh - 50px); /*height: calc(100vh - 40px); previously*/
   background-size: 100%;
   position: relative;
-  margin-top: 100px;
-  margin-bottom: 0px;
+  margin-top: 40px;
 }
 
 @media (min-width: 1025px) {
@@ -545,7 +544,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
 .footer .copyrights p, .footer .copyrights .credits {
 
-/*
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
@@ -553,12 +551,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   font-size: 14px;
   letter-spacing: 0;
   color: black;
-*/
-
-  display: inline-block;
-  position: fixed;
-  bottom: 0;
-  font-family: 'Fjalla One', sans-serif;
 
 }
+
 
