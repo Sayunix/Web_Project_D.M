@@ -179,13 +179,10 @@ span {
   margin: 0;
 }
 
-.scroll-header {
-  background: #fff;
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
-}
+
 
 /*--------------------------------------------------------------
-# Hero Section
+# Welcome Section
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
@@ -251,47 +248,6 @@ span {
   margin-bottom: 30px;
 }
 
-#hero .btn-get-started {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 11px 36px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin-bottom: 30px;
-  border: 2px solid #71c55d;
-  background: #fff;
-  color: #71c55d;
-  text-decoration: none;
-}
-
-#hero .btn-get-started:hover {
-  background: #71c55d;
-  color: #fff;
-}
-
-#hero .btns a {
-  color: #555;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 4px 20px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-@media (max-width: 575px) {
-  #hero .btns a {
-    margin: 4px 8px;
-  }
-}
-
-#hero .btns a:hover {
-  color: #71c55d;
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -325,33 +281,9 @@ span {
   display: block;
 }
 
-.nav-menu ul ul {
-  top: 0;
-  left: 100%;
-}
 
-.nav-menu ul li {
-  min-width: 180px;
-}
 
 /* Nav Menu Arrows */
-.sf-arrows .sf-with-ul {
-  padding-right: 22px;
-}
-
-.sf-arrows .sf-with-ul:after {
-  content: "\f107";
-  position: absolute;
-  right: 8px;
-  margin-top: 1px;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-}
-
-.sf-arrows ul .sf-with-ul:after {
-  content: "\f105";
-}
 
 /* Nav Meu Container */
 #nav-menu-container {
@@ -376,7 +308,7 @@ span {
   font-size: 25px;
   outline: none;
   letter-spacing: 0;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
 .nav-menu li:hover > a, .nav-menu > .menu-active > a {
@@ -543,16 +475,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
   }
 }
 
-.section-title {
-  margin-bottom: 80px;
-}
-
-@media (max-width: 992px) {
-  .section-title {
-    margin-bottom: 40px;
-  }
-}
-
 .section-title h2 {
   font-family: "Roboto", sans-serif;
   font-size: 45px;
@@ -562,21 +484,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   text-transform: capitalize;
 }
 
-.section-title .separator {
-  margin: 0;
-}
-
-.separator {
-  color: #626262;
-  font-family: "Roboto", sans-serif;
-  font-size: 15px;
-  font-weight: 300;
-  margin-bottom: 30px;
-  text-transform: capitalize;
-}
-
-
-/* Testimonials Section
+/* Wisdom pearl of the day Section
 --------------------------------*/
 #testimonials .testimonials-content {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
@@ -595,11 +503,11 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 #testimonials .top-top > h2 {
-  font-family: "Roboto" sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 45px;
   font-weight: 100;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+
   text-transform: capitalize;
 }
 
@@ -610,7 +518,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 #testimonials .top-top span {
   font-size: 12px;
   font-weight: 300;
-  margin-left: 26px;
+
 }
 
 #testimonials .btm-btm ul li {
@@ -619,7 +527,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
   border-radius: 50%;
   margin-right: 13px;
   background: #ddd none repeat scroll 0 0;
-  border-radius: 50%;
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: block;
@@ -629,26 +536,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
 
 #testimonials .btm-btm .active {
   background: #71c55d;
-}
-
-.carousel-indicators {
-  position: relative;
-  bottom: 0;
-  left: 0;
-  bottom: 0 !important;
-  z-index: 15;
-  width: auto;
-  padding-left: 0;
-  margin: 30px auto 0 auto;
-  margin-right: auto;
-  text-align: center;
-  list-style: none;
-  margin-bottom: 0;
-  display: inline-block;
-}
-
-.carousel-indicators li {
-  margin: 0;
 }
 
 /*--------------------------------------------------------------
@@ -662,11 +549,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 0;
+  color: black;
 
 }
 
-.footer .copyrights p a, .footer .copyrights .credits a {
-  letter-spacing: 0;
-  color: #71c55d;
-
-}
