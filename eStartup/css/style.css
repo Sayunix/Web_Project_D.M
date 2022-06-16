@@ -186,7 +186,7 @@ span {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: calc(100vh - 40px);
+  height: calc(65vh - 50px); /*height: calc(100vh - 40px); previously*/
   background-size: 100%;
   position: relative;
   margin-top: 40px;
@@ -490,7 +490,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
   padding: 49px 20px;
 }
-
+/*top: -29px;  */
 #testimonials .testimonials-content::before {
   color: #71c55d;
   content: "";
@@ -543,6 +543,8 @@ body.mobile-nav-active #mobile-nav-toggle i {
 --------------------------------------------------------------*/
 
 .footer .copyrights p, .footer .copyrights .credits {
+
+
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
