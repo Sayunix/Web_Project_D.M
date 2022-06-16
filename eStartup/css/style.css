@@ -496,7 +496,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   color: #71c55d;
   content: "";
   display: inline-block;
-  font: 70px/1 FontAwesome;
+  font: 50px/1 FontAwesome;
   position: absolute;
   right: 43px;
   text-align: left;
