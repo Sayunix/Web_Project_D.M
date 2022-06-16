@@ -535,9 +535,10 @@ body.mobile-nav-active #mobile-nav-toggle i {
   width: 10px;
 }
 
-#testimonials .btm-btm .active {
+#testimonials .div .btm-btm .active {
   background: #71c55d;
 }
+
 
 /*--------------------------------------------------------------
 # Footer
