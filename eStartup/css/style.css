@@ -488,16 +488,16 @@ body.mobile-nav-active #mobile-nav-toggle i {
 /* Wisdom pearl of the day Section
 --------------------------------*/
 
-#testimonials{
+#quote{
   border: black;
 
 }
-#testimonials .testimonials-content {
+#quote .quote-content {
   box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
   padding: 49px 20px;
 }
 /*top: -29px;  */
-#testimonials .testimonials-content::before {
+#quote .quote-content::before {
   color: #71c55d;
   content: "";
   display: inline-block;
@@ -508,7 +508,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
   top: -29px;
 }
 
-#testimonials .top-top > h2 {
+#quote .top-top > h2 {
   font-family: "Roboto", sans-serif;
   font-size: 45px;
   font-weight: 100;
@@ -516,17 +516,17 @@ body.mobile-nav-active #mobile-nav-toggle i {
   text-transform: capitalize;
 }
 
-#testimonials .top-top > h4 {
+#quote .top-top > h4 {
   font: 700 12px Lato, sans-serif;
 }
 
-#testimonials .top-top span {
+#quote .top-top span {
   font-size: 12px;
   font-weight: 300;
 
 }
 
-#testimonials .btm-btm ul li {
+#quote .btm-btm ul li {
   float: left;
   margin-left: 13px;
   border-radius: 50%;
