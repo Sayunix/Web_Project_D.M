@@ -373,7 +373,7 @@ span {
   color: #555;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 25px;
   outline: none;
   letter-spacing: 0;
   transition: 0.3s;
@@ -655,14 +655,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
 # Footer
 --------------------------------------------------------------*/
 
-
-.footer .copyrights {
-  background: #fff;
-  margin-top: 50px;
-  text-align: center;
-  padding: 25px;
-}
-
 .footer .copyrights p, .footer .copyrights .credits {
   margin: 0;
   padding: 0;
@@ -670,9 +662,11 @@ body.mobile-nav-active #mobile-nav-toggle i {
   font-weight: normal;
   font-size: 14px;
   letter-spacing: 0;
+
 }
 
 .footer .copyrights p a, .footer .copyrights .credits a {
   letter-spacing: 0;
   color: #71c55d;
+
 }
