@@ -1,10 +1,5 @@
 @charset "UTF-8";
-/*
-  Theme Name: eStartup
-  Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -184,7 +179,7 @@ span {
 /*--------------------------------------------------------------
 # Welcome Section
 --------------------------------------------------------------*/
-#hero {
+#welcome {
   width: 100%;
   height: calc(40vh - 50px); /*height: calc(100vh - 40px); previously*/
   background-size: 100%;
@@ -194,12 +189,12 @@ span {
 }
 
 @media (min-width: 1025px) {
-  #hero {
+  #welcome {
     background-attachment: fixed;
   }
 }
 
-#hero .hero-container {
+#welcome .welcome-container {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -212,7 +207,7 @@ span {
   text-align: center;
 }
 
-#hero h1 {
+#welcome h1 {
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 700;
@@ -222,13 +217,13 @@ span {
 }
 
 @media (max-width: 768px) {
-  #hero h1 {
+  #welcome h1 {
     font-size: 28px;
     line-height: 36px;
   }
 }
 
-#hero h2 {
+#welcome h2 {
   color: #777;
   margin-bottom: 30px;
   font-size: 20px;
@@ -237,14 +232,14 @@ span {
 }
 
 @media (max-width: 768px) {
-  #hero h2 {
+  #welcome h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
 }
 
-#hero img {
+#welcome img {
   max-width: 95%;
   margin-bottom: 30px;
 }
