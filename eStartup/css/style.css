@@ -508,7 +508,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
   font-size: 45px;
   font-weight: 100;
   letter-spacing: 2px;
-
   text-transform: capitalize;
 }
 
@@ -534,11 +533,6 @@ body.mobile-nav-active #mobile-nav-toggle i {
   height: 10px;
   width: 10px;
 }
-
-#testimonials .div .btm-btm .active {
-  background: #71c55d;
-}
-
 
 /*--------------------------------------------------------------
 # Footer
