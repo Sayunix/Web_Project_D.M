@@ -190,7 +190,6 @@ span {
 #hero {
   width: 100%;
   height: calc(100vh - 40px);
-  background: url(../img/hero-bg.png) center bottom no-repeat;
   background-size: 100%;
   position: relative;
   margin-top: 40px;
@@ -655,42 +654,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
-  background: #2a2c30;
-  padding-top: 50px;
-}
 
-.footer .footer-logo .navbar-brand {
-  color: #fff;
-  display: inline-block;
-  float: none;
-  font-family: "Philosopher", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  height: 100%;
-  letter-spacing: 0.2em;
-  padding-left: 0;
-  padding-top: 0;
-}
-
-.footer .footer-logo p {
-  color: #fff;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.footer .list-menu > h4 {
-  color: #fff;
-  padding-bottom: 20px;
-}
-
-.footer .list-menu ul li a {
-  color: #fff;
-  font-size: 12px;
-  padding-left: 5px;
-  text-decoration: none;
-  letter-spacing: 0;
-}
 
 .footer .copyrights {
   background: #fff;
