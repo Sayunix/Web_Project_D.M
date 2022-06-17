@@ -4,6 +4,8 @@ const session = require("express-session");
 const app = express();
 const path = require('path');
 
+const loginRouter = require('./eStartup/api/routes/login-router')
+
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'eStartup')));
