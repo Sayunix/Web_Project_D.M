@@ -1,0 +1,24 @@
+{
+  "name": "web_project_d.m",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sayunix/Web_Project_D.M.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sayunix/Web_Project_D.M/issues"
+  },
+  "homepage": "https://github.com/Sayunix/Web_Project_D.M#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "nodemon": "^2.0.16"
+  }
+}
