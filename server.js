@@ -4,7 +4,13 @@ const session = require("express-session");
 const app = express();
 const path = require('path');
 
+
+const learingRouter = require('./api/routes/learning-router');
+
+
 const loginRouter = require('./api/routes/login-router')
+
+app.use('/api', learingRouter);
 
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
