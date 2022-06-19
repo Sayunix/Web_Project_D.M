@@ -92,7 +92,8 @@ main > h1, main > p{
   "a1"
   "a2"
   "a3"
-  "a4";
+  "a4"
+  "a5";
 }
 
 #header{
@@ -101,9 +102,12 @@ main > h1, main > p{
 #Main{
     grid-area: a2;
 }
-#Aside{
+#Section-text{
     grid-area: a3;
 }
-#Footer{
+#Aside{
     grid-area: a4;
+}
+#Footer{
+    grid-area: a5;
 }

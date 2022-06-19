@@ -114,7 +114,8 @@ class LearningMethod {
                             .append(new ElementCreator("p")
                                 .id("p-text-" + technique.name)
                                 .text(technique.text))
-                            .appendTo(document.getElementById("Aside"))
+                            .appendTo(document.getElementById("Section-text"))
+
                     })))
     .insertBefore(document.querySelector("section"));
 
