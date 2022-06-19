@@ -83,12 +83,8 @@
                 <div class="carousel-item active">
                   <div class="top-top">
 
-                    <h2>Wisdom pearl of the day</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                      type and scrambled it to make a type
-                      specimen book. It has survived not only five centuries.</p>
-                    <h4>Dei mudder<span>manager</span></h4>
+                    <h2 id="qoute">Wisdom pearl of the day</h2>
+                    <h4 id="author"></h4>
 
                   </div>
                 </div>
@@ -133,6 +129,22 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
+  <script>
+    let index = Math.floor(Math.random() * 1000);
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    let string = data[index].text;
+    let author = data[index].author;
+    let p = document.createElement('p');
+    let pAuthor = document.querySelector('#author');
+    pAuthor.innerHTML = author;
+    p.innerHTML = string;
+    let div = document.querySelector('#qoute');
+    div.appendChild(p);
+  });
+  </script>
 </body>
 </html>
