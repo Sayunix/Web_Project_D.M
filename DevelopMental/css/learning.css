@@ -79,17 +79,31 @@
 }
 
 #Main{
-    margin: 50px 0 10px 10px;
+    margin: 50px 10px 10px 10px;
 }
 
 main > h1, main > p{
     text-align: center;
 }
 
-footer{
-    position: fixed;
-    padding: .6em;
-    bottom: 0;
-    right: 0;
-    left: 0;
+.learning-container{
+    display: grid;
+    grid-template-areas:
+  "a1"
+  "a2"
+  "a3"
+  "a4";
+}
+
+#header{
+    grid-area: a1;
+}
+#Main{
+    grid-area: a2;
+}
+#Aside{
+    grid-area: a3;
+}
+#Footer{
+    grid-area: a4;
 }

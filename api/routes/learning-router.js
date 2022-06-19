@@ -5,20 +5,4 @@ const routes = Router();
 
 routes.get('/techniques', controller.getTechniques);
 
-/* --- Task 2 --- Add a route to create new books
-   endpoint: /categories/:category/books
-
-routes.post('/categories/:category/books', controller.createBook);
-
- --- Task 3 --- Add a route to update a book
-   endpoint: /books/:id
-
-routes.put("/books/:id",controller.updateBook);
-
- --- Task 4 --- Add a route to delete a book
-   endpoi /books/:id
-
-routes.delete("/books/:id",controller.deleteBook);*/
-
-
 module.exports = routes;

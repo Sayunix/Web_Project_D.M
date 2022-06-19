@@ -78,15 +78,15 @@ class LearningMethod {
 
     addToDOM(technique) {
 
-        for (const section of document.querySelectorAll("section")) {
-            section.remove();
+        for (const article of document.querySelectorAll("article")) {
+            article.remove();
         }
 
         this.addTechniqueToDOM(technique);
     }
 
     addTechniqueToDOM(technique) {
-        new ElementCreator("section")
+        new ElementCreator("article")
             .id(technique.id)
             .append(new ElementCreator("div")
                 .id("div-"+technique.name)
@@ -102,8 +102,21 @@ class LearningMethod {
                 .append(new ElementCreator("button")
                     .id("button-"+technique.name)
                     .text("+ read more")
-                    .listener("click", () => alert("test"))))
-            .insertBefore(document.querySelector("main"), document.querySelector("main > a[href]"));
+                    .listener("click", () => {
+                        if (document.getElementById("text") != null){
+                            document.getElementById("text").remove();
+                        }
+                        new ElementCreator("article")
+                            .id("text")
+                            .append(new ElementCreator("h2")
+                                .id("h2-text-" + technique.name)
+                                .text(technique.title))
+                            .append(new ElementCreator("p")
+                                .id("p-text-" + technique.name)
+                                .text(technique.text))
+                            .appendTo(document.getElementById("Aside"))
+                    })))
+    .insertBefore(document.querySelector("section"));
 
         document.getElementById(technique.id).className = "card";
         document.getElementById("div-"+technique.name).className = "card_content";
