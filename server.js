@@ -4,9 +4,17 @@ const session = require("express-session");
 const app = express();
 const path = require('path');
 
+
+const learingRouter = require('./api/routes/learning-router');
+
+
+const loginRouter = require('./api/routes/login-router')
+
+app.use('/api', learingRouter);
+
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'eStartup')));
+app.use(express.static(path.join(__dirname, 'DevelopMental')));
 //entrypoint
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
