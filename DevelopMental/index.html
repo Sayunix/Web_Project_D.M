@@ -137,13 +137,17 @@ fetch("https://type.fit/api/quotes")
   })
   .then(function(data) {
     let string = data[index].text;
-    let author = data[index].author;
     let p = document.createElement('p');
-    let pAuthor = document.querySelector('#author');
-    pAuthor.innerHTML = author;
     p.innerHTML = string;
     let div = document.querySelector('#qoute');
     div.appendChild(p);
+    let author = data[index].author;
+    let pAuthor = document.querySelector('#author');
+    if(author == NULL){
+      pAuthor.innerHTML = 'Unknown';
+    }else{
+      pAuthor.innerHTML = author;
+    }
   });
   </script>
 </body>
