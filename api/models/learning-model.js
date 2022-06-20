@@ -20,14 +20,32 @@ class TechniqueModel {
     }
 
     addTechnique(technique) {
-        if (!this.techniques.get(technique)) {
-            technique.id = TechniqueModel.TECHNIQUE_ID++;
-            this.techniques.set(technique, new Map())
-        }
+        technique.id = TechniqueModel.TECHNIQUE_ID++;
+        this.techniques.set(technique, technique.id);
     }
 
     getTechniques() {
         return Array.from(this.techniques.keys());
+    }
+
+    getTechnique(id) {
+        if (typeof id !== "number") {
+            throw new Error(`Given id must be an number, but is a ${typeof id}`);
+        }
+
+        let technique = null;
+
+        for (var i = 0; i < this.getTechniques().length; i++) {
+            if (this.getTechniques()[i].id === id){
+                technique = this.getTechniques()[i];
+            }
+        }
+
+        return technique;
+    }
+
+    deleteTechnique(id) {
+        this.techniques.delete(this.getTechnique(id));
     }
 }
 

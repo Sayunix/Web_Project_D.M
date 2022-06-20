@@ -5,4 +5,6 @@ const routes = Router();
 
 routes.get('/techniques', controller.getTechniques);
 
+routes.delete('/techniques/:id', controller.deleteTechnique);
+
 module.exports = routes;
