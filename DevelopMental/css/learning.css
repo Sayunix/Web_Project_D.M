@@ -2,9 +2,7 @@
     position: relative;
     width: 250px;
     height: 250px;
-    color: #a18a96;
-    background: url(DevelopMental/img/test.jpg) center;
-    background-size: cover;
+    color: #51565c;
     border-radius: 25px;
     overflow: hidden;
 
@@ -18,10 +16,10 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 255px;
-    padding: 10px;
-    background-color: #ffff00;
-    border-top-left-radius: 35px;
+    width: 100%;
+    padding: 15px;
+    background-color: #71c55d;
+    border-top-left-radius: 20px;
     transform: translateY(70px);
     transition: transform .25s;
 }
@@ -29,39 +27,31 @@
 .card_content::before{
     content: '';
     position: absolute;
-    top: -49px;
-    right: -39px;
+    top: -47px;
+    right: -50px;
     width: 100px;
     height: 100px;
-    transform: rotate(-177.5deg);
+    transform: rotate(-175deg);
     border-radius: 50%;
     box-shadow: inset 48px 48px
-    #ffff00;
+    #71c55d;
 }
 
 .card_title{
-    color: #0000ff;
-    margin: 5px 0 0 10px;
+    color: #000000;
+    line-height: 25px;
 }
 
 .card_subtitle{
     display: block;
     font-size: 12px;
-    margin: 5px 0 0 10px;
+    margin-bottom: 40px;
 }
 
 .card_description{
-    font-size: 14px;
+    font-size: 0;
     opacity: 0;
-    transition: opacity .5s;
-    margin: 10px 0 10px 10px;
-}
-
-.card_button{
-    opacity: 0;
-    transition: opacity .5s;
-    margin: 0 0 0 150px;
-    border-radius: 20px;
+    transition: opacity .5s, font-size 1s;
 }
 
 .card:hover .card_content{
@@ -70,11 +60,9 @@
 
 .card:hover .card_description{
     opacity: 1;
-    transition-delay: .25s;
-}
-
-.card:hover .card_button{
-    opacity: 1;
+    font-size: 14px;
+    margin: 0;
+    transition: font-size 1s;
     transition-delay: .25s;
 }
 
@@ -97,7 +85,7 @@ main > h1, main > p{
 }
 #Main{
     grid-area: a2;
-    margin: 40px 10px 10px 10px;
+    margin: 40px 15px 10px 10px;
 }
 #Section-text{
     grid-area: a3;
@@ -109,11 +97,21 @@ main > h1, main > p{
 }
 #Footer{
     grid-area: a5;
-    text-align: center;
 }
 
 #h2-text{
     text-align: center;
+}
+
+#Address .copyrights p, #Address .copyrights .credits {
+    margin: 0 0 0 10px;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0;
+    color: black;
+
 }
 
 @media (min-width: 900px) {

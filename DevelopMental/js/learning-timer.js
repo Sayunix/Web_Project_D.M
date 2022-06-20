@@ -34,7 +34,7 @@ function startTimer() {
             btn.addEventListener("click", () => {
                 document.getElementById('break-timer').remove();
                 document.getElementById('timer').innerHTML =
-                    30 + ":" + 0;
+                    15 + ":" + 0;
                 startTimer();
             });
         } else if (counter === 0) {

@@ -33,15 +33,13 @@ class TechniqueModel {
 
 const model = new TechniqueModel();
 
-const blablaTechnique = new Technique("blabla", "BLALBA","img/test.jpg","1-2 sätze" ,"BLABLA is dies und das und so!", "Soooo ein langer Text");
-model.addTechnique(blablaTechnique);
-const blablTechnique = new Technique("blabl", "BLALB","img/test.jpg","1-2 sätze" ,"BLABLA is dies und das und so!","Soooo ein langer Text");
-model.addTechnique(blablTechnique);
-const blabTechnique = new Technique("blab", "BLAL","img/test.jpg","1-2 sätze" ,"BLABLA is dies und das und so!","Soooo ein langer Text");
-model.addTechnique(blabTechnique);
-const blaTechnique = new Technique("bla", "BLA","img/test.jpg","1-2 sätze" ,"BLABLA is dies und das und so!","Soooo ein langer Text");
-model.addTechnique(blaTechnique);
-const PomodoroTechnique = new Technique("pomodoro", "POMODORO","img/test.jpg","1-2 sätze" ,"Pomodoror is dies und das und so!","Soooo ein langer Text");
+const twominuteruleTechnique = new Technique("two-minute", "THE 2 MINUTE RULE","img/The-2-Minute-Rule.jpg","Work with full focus just for 2 minutes" ,"You start to work just for 2 minutes. After the 2 minutes you decide what to fo next. This Rule is a mental trick that forces you into action.","Soooo ein langer Text");
+model.addTechnique(twominuteruleTechnique);
+const fiftytwoseventeenTechnique = new Technique("fiftytwo-seventeen", "52/17","img/fiftytwo-seventeen.jpg","Work for 52 min - Break for 17 min" ,"A group find out that the most productive way is to work for 52 minutes, then take breaks for 17 minutes.","Soooo ein langer Text");
+model.addTechnique(fiftytwoseventeenTechnique);
+const ninetyMinuteTechnique = new Technique("ninety-min", "90 MINUTE FOCUS BLOCK","img/ninety-minute.jpg","Similar to Pomodoro Technique" ,"The idea is to work in 90-minute blocks rather than 25 minute periods and make breaks for 20 minutes.","Soooo ein langer Text");
+model.addTechnique(ninetyMinuteTechnique);
+const PomodoroTechnique = new Technique("pomodoro", "POMODORO","img/Pomodoro.jpg","Work for 25 min - Short Break for 5 min" ,"1. Set a timer for 25 minutes<br>2. Don't let you distract<br>3. Take a 5 min break<br>4. After four breaks do a 15 min break<br>5. Repeat!","Soooo ein langer Text");
 model.addTechnique(PomodoroTechnique);
 
 module.exports = model;

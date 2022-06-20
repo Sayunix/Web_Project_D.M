@@ -98,25 +98,22 @@ class LearningMethod {
                     .text(technique.smalldescription))
                 .append(new ElementCreator("p")
                     .id("p-"+technique.name)
-                    .text(technique.description))
-                .append(new ElementCreator("button")
-                    .id("button-"+technique.name)
-                    .text("+ read more")
-                    .listener("click", () => {
-                        if (document.getElementById("text") != null){
-                            document.getElementById("text").remove();
-                        }
-                        new ElementCreator("article")
-                            .id("text")
-                            .append(new ElementCreator("h2")
-                                .id("h2-text")
-                                .text(technique.title))
-                            .append(new ElementCreator("p")
-                                .id("p-text")
-                                .text(technique.text))
-                            .appendTo(document.getElementById("Section-text"))
-                        document.getElementById("text").scrollIntoView({behavior: 'smooth', block: 'start'});
-                    })))
+                    .text(technique.description)))
+            .listener("click", () => {
+                if (document.getElementById("text") != null){
+                    document.getElementById("text").remove();
+                }
+                new ElementCreator("article")
+                    .id("text")
+                    .append(new ElementCreator("h2")
+                        .id("h2-text")
+                        .text(technique.title))
+                    .append(new ElementCreator("p")
+                        .id("p-text")
+                        .text(technique.text))
+                    .appendTo(document.getElementById("Section-text"))
+                document.getElementById("text").scrollIntoView({behavior: 'smooth', block: 'start'});
+            })
     .insertBefore(document.querySelector("section"));
 
         document.getElementById(technique.id).className = "card";
@@ -124,9 +121,8 @@ class LearningMethod {
         document.getElementById("h3-"+technique.name).className = "card_title";
         document.getElementById("span-"+technique.name).className = "card_subtitle";
         document.getElementById("p-"+technique.name).className = "card_description";
-        document.getElementById("button-"+technique.name).className = "card_button";
 
-        document.getElementById(technique.id).style.background = "url("+technique.cover+") center";
+        document.getElementById(technique.id).style.background = "url("+technique.cover+") center no-repeat";
         document.getElementById(technique.id).style.backgroundSize = "cover";
 
     }
