@@ -547,6 +547,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 .footer {
+  position: absolute;
   text-align: center;
   bottom: 0;
   width: 100%;
