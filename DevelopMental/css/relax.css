@@ -3,16 +3,13 @@
 --------------------------------------------------------------*/
 /*  Edited with:
     https://stackoverflow.com/questions/22433616/how-can-i-align-youtube-embedded-video-in-the-center-in-bootstrap */
-.body .main {
-
-    text-align: center;
-}
 
 .PMR-container {
     display: block;
-    width: 560px; /* you have to have a size or this method doesn't work */
-    height: 315px; /* think about making these max-width instead - might give you some more responsiveness */
+    width: 800px; /* you have to have a size or this method doesn't work */
+    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
+    border: 50px solid #000000;
 }
 /*--------------------------------------------------------------
 # Autogenic Training Relaxation Playlist
@@ -23,4 +20,18 @@
     width: 560px; /* you have to have a size or this method doesn't work */
     height: 315px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: auto;
+    border: 50px solid #000000;
 }
+
+/*--------------------------------------------------------------
+# Youtube Music Container
+--------------------------------------------------------------*/
+
+.youtube-container {
+    display: block;
+    width: 560px; /* you have to have a size or this method doesn't work */
+    height: 315px; /* think about making these max-width instead - might give you some more responsiveness */
+    margin: auto;
+    border: 50px solid #000000;
+}
+
