@@ -4,6 +4,46 @@ const session = require("express-session");
 const app = express();
 const path = require('path');
 
+//new form here
+const dotenv = require('dotenv');
+require('dotenv').config({path:'./.env'})
+/*dotenv.config({ path: './.env'});*/
+
+const mysql = require("mysql");
+
+const db = mysql.createConnection({
+    host: process.env.DATABASE_HOST, //or ip adress from server!
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE
+});
+
+/*
+const db = mysql.createConnection({
+    host: 'localhost', //or ip adress from server!
+    user: 'root',
+    password: '',
+    database: 'DM-login' 
+});
+*/
+
+const publicDirectory = path.join(__dirname, './css');
+app.use(express.static(publicDirectory));
+
+//template on what the main page should look like
+//app.set('view engine', 'hbs');
+
+
+
+db.connect( (error) => {
+    if(error) {
+        console.log(error)
+    } else{
+        console.log("MYSQL Connected!")
+    }
+})
+
+
 
 const learingRouter = require('./api/routes/learning-router');
 

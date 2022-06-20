@@ -27,9 +27,10 @@
 
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/login.css">
 
     <!-- Secondary Stylesheet File -->
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/register.css">
 
 </head>
 
@@ -51,10 +52,8 @@
                 <li><a href="relax.html">Relax</a></li>
                 <li><a href="freetime.html">Freetime</a></li>
                 <li><a href="learning.html">Learning</a></li>
-                <li class="menu-active"><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-
-
+                <li><a href="login.html">Login</a></li>
+                <li class="menu-active"><a href="register.html">Register</a></li>
 
             </ul>
         </nav><!-- #nav-menu-container -->
@@ -62,12 +61,25 @@
 </header>
 
 <div class="container mt-4">
-    <div class="jumbotron">
-        <h1 class="display-4">Login</h1>
-        <p class="lead">Welcome back!</p>
-        <hr class="my-4">
-        <p>If you want to login please press the button below.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Login</a>
+    <div class="card">
+        <div class="card-header">
+            Register Form
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register User</button>
+            </form>
+        </div>
     </div>
 </div>
 
