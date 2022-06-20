@@ -538,8 +538,8 @@ body.mobile-nav-active #mobile-nav-toggle i {
 --------------------------------------------------------------*/
 
 .footer .copyrights p, .footer .copyrights .credits {
-  position:absolute;
-  bottom:0;
+
+  bottom: 0;
   width:100%;
   height:40px;   /* Height of the footer */
   background: white;

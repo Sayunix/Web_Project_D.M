@@ -73,6 +73,72 @@
 <!-- Template Main Javascript File -->
 <script src="js/main.js"></script>
 
+<main>
+
+    <!-- weather api -->
+    <div class="weather-container">
+        <img class="icon">
+        <p class="weather"></p>
+        <p class="temp"></p>
+    </div>
+
+
+
+    <br>
+    <br><h2>Tips on how to spend your free time!</h2>
+    These are just some examples of hobbies, habits, and activities that successful people enjoy when they aren’t working:
+    <br>
+    <br>
+    <br><h3>Physical exercise</h3>
+    Physical exercise keeps you in shape, reduces your susceptibility to illness, increases your perceived energy, boosts productivity, and is a perfect opportunity to talk to other people.
+    <br>
+    <br>
+    <br><h3>Vacations</h3>
+    Traveling the world to see and experience new places, cultures, foods, and experiences is not just fun; it’s a fantastic way to expand your mind and recharge from burnout.
+    <br>Nonetheless, it’s important to travel to different places that make you happy, and make memories that will last a lifetime.
+    <br>
+    <br>
+    <br><h3>Creative pursuits</h3>
+    Many studies confirm that doing art, and engaging in creative activities, can improve brain function and increase your capacity for creative thinking.
+    <br>It’s no wonder, then, that so many successful people spend some of their free time with creative hobbies.
+    <br>They paint, they learn to play musical instruments, they creatively write, and they make short films; whatever mediums they choose, they always stay stimulated.
+
+
+
+</main>
+
+
+
+
+<!-- JavaScript Libraries -->
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery/jquery-migrate.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="lib/superfish/hoverIntent.js"></script>
+<script src="lib/superfish/superfish.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/modal-video/js/modal-video.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script>
+    fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=relaxation_music&regionCode=AT&type=video&videoEmbeddable=true&key=AIzaSyC07Y-J5kpjl3RlLt9vzOfGJ4SdGAixiyQ')
+        .then((data)=>{
+            return data.json();
+        }).then((result)=>{
+        console.log(result.items);
+        let videos = result.items;
+        let videoContainer = document.querySelector(".youtube-container"); //video container erstellt
+        for(let video of videos){ // for each
+            videoContainer.innerHTML += `
+        <iframe width="560" height="400" src="https://www.youtube.com/embed/${video.id.videoId}" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p></p>`
+        }
+    })</script>
+
+<!-- Template Main Javascript File -->
+<script src="js/main.js"></script>
+
 <!--==========================
     Footer
   ============================-->
