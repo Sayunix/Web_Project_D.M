@@ -66,7 +66,7 @@
             Register Form
         </div>
         <div class="card-body">
-            <form>
+            <form action="auth" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name">
@@ -78,6 +78,9 @@
                 </div>
 
                 <button type="submit" class="btn btn-primary">Register User</button>
+            </form>
+            <form action="/logout" method="post">
+                <button type="submit">logout</button>
             </form>
         </div>
     </div>
