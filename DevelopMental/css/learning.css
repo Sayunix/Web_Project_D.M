@@ -78,10 +78,6 @@
     transition-delay: .25s;
 }
 
-#Main{
-    margin: 50px 10px 10px 10px;
-}
-
 main > h1, main > p{
     text-align: center;
 }
@@ -101,13 +97,25 @@ main > h1, main > p{
 }
 #Main{
     grid-area: a2;
+    margin: 40px 10px 10px 10px;
 }
 #Section-text{
     grid-area: a3;
 }
 #Aside{
     grid-area: a4;
+    text-align: center;
+    margin: 25px auto 25px auto;
 }
 #Footer{
     grid-area: a5;
+    text-align: center;
+}
+
+#h2-text{
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+
 }

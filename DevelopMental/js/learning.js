@@ -109,13 +109,13 @@ class LearningMethod {
                         new ElementCreator("article")
                             .id("text")
                             .append(new ElementCreator("h2")
-                                .id("h2-text-" + technique.name)
+                                .id("h2-text")
                                 .text(technique.title))
                             .append(new ElementCreator("p")
-                                .id("p-text-" + technique.name)
+                                .id("p-text")
                                 .text(technique.text))
                             .appendTo(document.getElementById("Section-text"))
-
+                        document.getElementById("text").scrollIntoView();
                     })))
     .insertBefore(document.querySelector("section"));
 
