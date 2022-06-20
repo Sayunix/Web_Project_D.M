@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", async function (event) {
     fetch("api/techniques")
         .then(response => response.json())
         .then(techniques => {
-            for (const technique of Array.from(techniques).reverse()) {
+            for (const technique of Array.from(techniques)) {
                 learning.addTechniqueToDOM(technique);
             }
         });
