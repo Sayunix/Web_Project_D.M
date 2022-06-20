@@ -115,7 +115,7 @@ class LearningMethod {
                                 .id("p-text")
                                 .text(technique.text))
                             .appendTo(document.getElementById("Section-text"))
-                        document.getElementById("text").scrollIntoView();
+                        document.getElementById("text").scrollIntoView({behavior: 'smooth', block: 'start'});
                     })))
     .insertBefore(document.querySelector("section"));
 
