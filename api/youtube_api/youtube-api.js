@@ -6,7 +6,7 @@ fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=
     }).then((result)=>{
         console.log(result.items);
     let videos = result.items;
-    let videoContainer = document.querySelector(".youtube-container"); //video container erstellt
+    let videoContainer = document.querySelector(".youtube-container"); //video container created
     for(let video of videos){ // for each
         videoContainer.innerHTML += `
         <iframe width="560" height="400" src="https://www.youtube.com/embed/${video.id.videoId}" title="YouTube video player" 
