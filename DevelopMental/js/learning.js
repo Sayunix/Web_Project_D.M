@@ -49,40 +49,12 @@ class ElementCreator {
     }
 }
 
-/* A class representing a category of books. It holds all the books belonging to this category.
- *
- * If you wonder what the three dots in the constructor are all about, see:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
- */
-class Technique {
-    constructor(title, id) {
-        this.title = title;
-        this.id = id;
-    }
-}
-
-/* The BookStore class is what renders the books in the DOM and houses the shopping cart. */
 class LearningMethod {
-    /* MAX_QUANTITY is the maximum quantity a user can order. You should use this constant in
-     * your code to control the number of options you create in the quantity select elements.
-     *
-     * If you want to know more about static properties, read this article:
-     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
-     */
 
     add(techniques) {
         for (const technique of techniques) {
             this.addTechniqueToDOM(technique);
         }
-    }
-
-    addToDOM(technique) {
-
-        for (const article of document.querySelectorAll("article")) {
-            article.remove();
-        }
-
-        this.addTechniqueToDOM(technique);
     }
 
     addTechniqueToDOM(technique) {
