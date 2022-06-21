@@ -3,10 +3,9 @@ const url = require("url");
 const {text} = require("express");
 
 class RelaxTechnique {
-    constructor(name, title, video, text) {
-        this.name = name;
+    constructor(title, text) {
+
         this.title = title;
-        this.video = video;
         this.text = text;
     }
 }
@@ -50,11 +49,11 @@ class RelaxTechniqueModel {
 
 const model = new RelaxTechniqueModel();
 
-const PMRTechnique = new RelaxTechnique("Progressive-Muscle-Relaxation", "Progressive Muscle Relaxation by Jacbson", "Wie soll ich hier bitte ein scheiss Video hochladen ok wtf he", "henlo bitte halo domo arigato")
+const PMRTechnique = new RelaxTechnique( "Progressive Muscle Relaxation by Jacbson",  "henlo bitte halo domo arigato")
 model.addRelaxTechnique(PMRTechnique);
-const ATTechnique = new RelaxTechnique("Autogenic-Training", "Autogenic Training", "Pfischigogerl mi glei haha so ein schas", "Weißt eh was mich kannst");
+const ATTechnique = new RelaxTechnique( "Autogenic Training",  "Heast");
 model.addRelaxTechnique(ATTechnique);
-const MusicRelax = new RelaxTechnique("Music-Relax", "Relaxation Music", "Jo eh", "Kannst bitte 1x leiwand sein?");
+const MusicRelax = new RelaxTechnique("Relaxation Music",  "Kannst bitte 1x leiwand sein?");
 model.addRelaxTechnique(MusicRelax);
 
 module.exports = model;

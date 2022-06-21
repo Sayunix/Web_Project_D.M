@@ -1,6 +1,6 @@
 class RelaxElementCreator {
     constructor(tag) {
-        this.element = document.createRelaxElement(tag);
+        this.element = document.createElement(tag);
     }
 
     id(id) {
@@ -89,10 +89,10 @@ class RelaxMethod {
         new ElementCreator("article")
             .id(relaxTechnique.id)
             .append(new RelaxElementCreator("div")
-                .id("div-"+relaxTechnique.name)
+                .id("div-"+relaxTechnique.title)
                 .append(new ElementCreator("h3")
-                    .id("h3-"+relaxTechnique.name)
-                    .text(relaxTechnique.title))
+                    .id("h3-"+relaxTechnique.title)
+                    .text(relaxTechnique.text))
                 .append(new ElementCreator("span")
                     .id("span-"+relaxTechnique.name)
                     .text(relaxTechnique.smalldescription))
