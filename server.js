@@ -42,6 +42,7 @@ app.post('/auth', function(req,res){
             res.redirect('/');
         }else{
             res.send('Incorrect Username and/or Password!');
+            alert('Wrong username');
         }
         res.end();
     }else{

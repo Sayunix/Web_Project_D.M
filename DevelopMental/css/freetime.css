@@ -12,3 +12,12 @@
     font-size: 50px;
     margin: 0;
 }
+
+
+.weather-container {
+    display: block;
+    width: 800px; /* you have to have a size or this method doesn't work */
+    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    margin: 150px auto auto;
+    border: 50px solid #000000;
+}

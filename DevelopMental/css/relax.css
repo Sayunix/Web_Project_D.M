@@ -9,7 +9,7 @@
     width: 800px; /* you have to have a size or this method doesn't work */
     height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 50px solid #000000;
+    border: 10px solid #000000;
 }
 /*--------------------------------------------------------------
 # Autogenic Training Relaxation Playlist
@@ -17,10 +17,10 @@
 
 .AT-container {
     display: block;
-    width: 560px; /* you have to have a size or this method doesn't work */
-    height: 315px; /* think about making these max-width instead - might give you some more responsiveness */
-    margin: auto;
-    border: 50px solid #000000;
+    width: 800px; /* you have to have a size or this method doesn't work */
+    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    margin: 150px auto auto;
+    border: 10px solid #000000;
 }
 
 /*--------------------------------------------------------------
@@ -29,9 +29,9 @@
 
 .youtube-container {
     display: block;
-    width: 560px; /* you have to have a size or this method doesn't work */
-    height: 315px; /* think about making these max-width instead - might give you some more responsiveness */
-    margin: auto;
-    border: 50px solid #000000;
+    width: 800px; /* you have to have a size or this method doesn't work */
+    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    margin: 150px auto auto;
+    border: 10px solid #000000;
 }
 
