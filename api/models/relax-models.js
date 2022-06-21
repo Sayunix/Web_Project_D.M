@@ -102,7 +102,7 @@ class RelaxTechniqueModel {
 
         const target = this.getRelaxTechnique(id);
         if(!target){
-            throw new Error(`Relaxing technique with $(id) does not exist and cannot be updated`)
+            throw new Error(`Relaxing technique with ${id} does not exist and cannot be updated`)
         }
         Object.assign(target, relaxTechnique);
         return target;
