@@ -1,13 +1,12 @@
 /* A class representing a category of books. It holds all the books belonging to this category. */
 const url = require("url");
+const {text} = require("express");
 
 class RelaxTechnique {
-    constructor(name, title, cover, smalldescription, description, text) {
+    constructor(name, title, video, text) {
         this.name = name;
         this.title = title;
-        this.cover = cover;
-        this.smalldescription = smalldescription;
-        this.description = description;
+        this.video = video;
         this.text = text;
     }
 }
@@ -51,13 +50,11 @@ class RelaxTechniqueModel {
 
 const model = new RelaxTechniqueModel();
 
-const PMRTechnique = new RelaxTechnique("Progressive-Muscle-Relaxation", "Progressive Muscle Relaxation by Jacbson", "img/The-2-Minute-Rule.jpg", "Easy Physical Relaxation", "Muscle Relaxation due to ", "Ua ORRRRRRRRRRGER text");
+const PMRTechnique = new RelaxTechnique("Progressive-Muscle-Relaxation", "Progressive Muscle Relaxation by Jacbson", "Wie soll ich hier bitte ein scheiss Video hochladen ok wtf he", "henlo bitte halo domo arigato")
 model.addRelaxTechnique(PMRTechnique);
-/*const fiftytwoseventeenTechnique = new Technique("fiftytwo-seventeen", "52/17", "img/fiftytwo-seventeen.jpg", "Work for 52 min - Break for 17 min", "A group find out that the most productive way is to work for 52 minutes, then take breaks for 17 minutes.", "Soooo ein langer Text");
-model.addTechnique(fiftytwoseventeenTechnique);
-const ninetyMinuteTechnique = new Technique("ninety-min", "90 MINUTE FOCUS BLOCK", "img/ninety-minute.jpg", "Similar to Pomodoro Technique", "The idea is to work in 90-minute blocks rather than 25 minute periods and make breaks for 20 minutes.", "Soooo ein langer Text");
-model.addTechnique(ninetyMinuteTechnique);
-const PomodoroTechnique = new Technique("pomodoro", "POMODORO", "img/Pomodoro.jpg", "Work for 25 min - Short Break for 5 min", "1. Set a timer for 25 minutes<br>2. Don't let you distract<br>3. Take a 5 min break<br>4. After four breaks do a 15 min break<br>5. Repeat!", "Soooo ein langer Text");
-model.addTechnique(PomodoroTechnique);*/
+const ATTechnique = new RelaxTechnique("Autogenic-Training", "Autogenic Training", "Pfischigogerl mi glei haha so ein schas", "Weißt eh was mich kannst");
+model.addRelaxTechnique(ATTechnique);
+const MusicRelax = new RelaxTechnique("Music-Relax", "Relaxation Music", "Jo eh", "Kannst bitte 1x leiwand sein?");
+model.addRelaxTechnique(MusicRelax);
 
 module.exports = model;

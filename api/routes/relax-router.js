@@ -21,4 +21,4 @@ routes.post('/RelaxTechniques', controller.addRelaxTechnique());
 
  */
 
-routes.put('/books/:id', controller.updateBook);
+routes.put('/RelaxTechniques/title', controller.updateRelaxTechnique);
