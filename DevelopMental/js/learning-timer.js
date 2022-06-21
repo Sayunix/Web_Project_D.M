@@ -1,11 +1,8 @@
-document.getElementById('timer-button').addEventListener("click", () => {
+
+function startTimer() {
     document.getElementById('timer-button').remove();
     document.getElementById('timer').innerHTML =
         25 + ":" + 0;
-    startTimer();
-});
-
-function startTimer() {
     var presentTime = document.getElementById('timer').innerHTML;
     var timeArray = presentTime.split(/[:]+/);
     var m = timeArray[0];
