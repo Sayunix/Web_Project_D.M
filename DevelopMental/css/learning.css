@@ -28,7 +28,7 @@ p {
     border-radius: 25px;
     overflow: hidden;
 
-    float: left;
+    float: top;
     margin: 0 10px 20px 15%;
     padding: 20px;
     box-sizing: border-box;
@@ -144,7 +144,7 @@ main > h1, main > p {
 
 #Main-span {
     color: #71c55d;
-    text-decoration: underline #71c55d;
+    font-weight: bold;
 }
 
 #Address .copyrights p, #Address .copyrights .credits {
@@ -192,6 +192,6 @@ main > h1, main > p {
     }
 
     #Section {
-        margin-left: 21%;
+        margin: 0 0 0 14%;
     }
 }
