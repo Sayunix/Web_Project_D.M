@@ -76,17 +76,8 @@ body {
     outline-color: #242329;
 }
 
-.about-h2{
+.team-h2{
     font-family: "Philosopher", sans-serif;
-}
-
-#about-web{
-    margin-top: 60px;
-}
-
-#p-about{
-    margin-top: 20px;
-    margin-bottom: 70px;
 }
 
 @keyframes shake {
