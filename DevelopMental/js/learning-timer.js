@@ -5,9 +5,6 @@ document.getElementById('timer-button').addEventListener("click", () => {
     startTimer();
 });
 
-var counter = 0;
-var longbreak = 0;
-
 function startTimer() {
     var presentTime = document.getElementById('timer').innerHTML;
     var timeArray = presentTime.split(/[:]+/);
@@ -23,43 +20,13 @@ function startTimer() {
     document.getElementById('timer').innerHTML =
         m + ":" + s;
     if (m == 0 && s == 0) {
-        let btn = document.createElement('input');
-        btn.setAttribute('type', 'button');
-        btn.setAttribute('id', 'break-timer');
-        if (longbreak === 4) {
-            longbreak = 0;
-            counter = 1;
-            document.getElementById('timer').innerHTML = "TAKE A LONGER BREAK!";
-            btn.setAttribute('value', 'Start Timer for the longer break!');
-            btn.addEventListener("click", () => {
-                document.getElementById('break-timer').remove();
-                document.getElementById('timer').innerHTML =
-                    15 + ":" + 0;
-                startTimer();
-            });
-        } else if (counter === 0) {
-            counter = 1;
-            document.getElementById('timer').innerHTML = "TAKE A BREAK!";
-            btn.setAttribute('value', 'Start Timer for the break!');
-            btn.addEventListener("click", () => {
-                document.getElementById('break-timer').remove();
-                document.getElementById('timer').innerHTML =
-                    5 + ":" + 0;
-                startTimer();
-            });
-        } else if (counter === 1) {
-            counter = 0;
-            longbreak++;
-            document.getElementById('timer').innerHTML = "START TO STUDY!";
-            btn.setAttribute('value', 'Start Timer for Studying!');
-            btn.addEventListener("click", () => {
-                document.getElementById('break-timer').remove();
-                document.getElementById('timer').innerHTML =
-                    25 + ":" + 0;
-                startTimer();
-            });
+        let timer = document.getElementById('timer');
+        timer.style.fontSize = "28px";
+        timer.innerHTML = "⋙Click on me to Relax!⋘";
+        timer.setAttribute("type","button");
+        timer.onclick = function () {
+            location.href = "http://localhost:5000/relax.html";
         }
-        Aside.appendChild(btn);
         return;
     }
     setTimeout(startTimer, 1000);

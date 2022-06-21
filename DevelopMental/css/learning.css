@@ -20,7 +20,7 @@ p {
 }
 
 
-.card{
+.card {
     position: relative;
     width: 250px;
     height: 250px;
@@ -34,7 +34,7 @@ p {
     box-sizing: border-box;
 }
 
-.card_content{
+.card_content {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -46,41 +46,40 @@ p {
     transition: transform .25s;
 }
 
-.card_content::before{
+.card_content::before {
     content: '';
     position: absolute;
-    top: -47px;
+    top: -50px;
     right: -50px;
     width: 100px;
     height: 100px;
-    transform: rotate(-175deg);
+    transform: rotate(-178deg);
     border-radius: 50%;
-    box-shadow: inset 48px 48px
-    #71c55d;
+    box-shadow: inset 48px 48px #71c55d;
 }
 
-.card_title{
+.card_title {
     color: #000000;
     line-height: 25px;
 }
 
-.card_subtitle{
+.card_subtitle {
     display: block;
     font-size: 12px;
     margin-bottom: 40px;
 }
 
-.card_description{
+.card_description {
     font-size: 0;
     opacity: 0;
     transition: opacity .5s, font-size 1s;
 }
 
-.card:hover .card_content{
+.card:hover .card_content {
     transform: translateY(0);
 }
 
-.card:hover .card_description{
+.card:hover .card_description {
     opacity: 1;
     font-size: 14px;
     margin: 0;
@@ -88,11 +87,11 @@ p {
     transition-delay: .25s;
 }
 
-main > h1, main > p{
+main > h1, main > p {
     text-align: center;
 }
 
-.learning-container{
+.learning-container {
     display: grid;
     grid-template-areas:
   "a1"
@@ -102,28 +101,46 @@ main > h1, main > p{
   "a5";
 }
 
-#header{
+#header {
     grid-area: a1;
 }
-#Main{
+
+#Main {
     grid-area: a2;
-    margin: 75px 15px 10px 10px;
+    margin: 45px 15px 10px 10px;
     font-family: "Roboto", sans-serif;
 }
-#Section-text{
+
+#Section-text {
     grid-area: a3;
 }
-#Aside{
+
+#source-text {
+    font-size: 14px;
+    margin: 0 10px 0 10px;
+}
+
+#p-text {
+    margin: 0 15px 0 10px;
+}
+
+#h2-text {
+    text-align: center;
+}
+
+#Aside {
     grid-area: a4;
     text-align: center;
     margin: 25px auto 25px auto;
 }
-#Footer{
+
+#Footer {
     grid-area: a5;
 }
 
-#h2-text{
-    text-align: center;
+#Main-span {
+    color: #71c55d;
+    text-decoration: underline #71c55d;
 }
 
 #Address .copyrights p, #Address .copyrights .credits {
@@ -137,14 +154,40 @@ main > h1, main > p{
 
 }
 
-#timer-button{
+#timer-button {
     margin: 0 auto;
     display: block;
-    height: 150px;
-    width: 150px;
+    height: 75px;
+    width: 75px;
     border-radius: 50%;
 }
 
-@media (min-width: 900px) {
+#timer-h3 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    margin: 0 10px 10px 0;
+}
 
+#timer {
+    font-size: 70px;
+    color: #71c55d;
+    font-weight: bold;
+}
+
+
+@media (min-width: 900px) {
+    .card {
+        float: left;
+        margin: 0 10px 20px 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #Section {
+        margin-left: 21%;
+    }
 }
