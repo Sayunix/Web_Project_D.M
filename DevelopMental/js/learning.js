@@ -110,11 +110,16 @@ class LearningMethod {
                         .text(technique.title))
                     .append(new ElementCreator("p")
                         .id("p-text")
-                        .text(technique.text))
+                        .text(technique.text+"<br><br>"))
+                    .append(new ElementCreator("p")
+                        .id("source-text")
+                        .text("Source: "+technique.source))
                     .appendTo(document.getElementById("Section-text"))
-                document.getElementById("text").scrollIntoView({behavior: 'smooth', block: 'start'});
+                document.getElementById("h2-text").scrollIntoView({behavior: 'smooth', block: 'start'});
+
             })
     .insertBefore(document.querySelector("section"));
+
 
         document.getElementById(technique.id).className = "card";
         document.getElementById("div-"+technique.name).className = "card_content";
