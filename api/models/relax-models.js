@@ -17,7 +17,7 @@ class RelaxTechnique {
 
 class RelaxTechniqueModel {
     static CATEGORY_ID = 1;
-    static RELAXTECHNIQUE_ID = 1;
+    static RELAX_TECHNIQUE_ID = 1;
 
     constructor() {
         this.relaxTechniques = new Map();
@@ -33,19 +33,16 @@ class RelaxTechniqueModel {
         return Array.from(this.relaxTechniques.keys());
     }
 
-    addRelaxTechnique(category, relaxTechniques) {
+    addRelaxTechnique(category, relaxTechnique) {
         if (!this.relaxTechniques.get(category)) {
             throw new Error(`Unknown relaxing technique category ${category.name}`)
         }
-        relaxTechniques.id = RelaxTechniqueModel.RELAXTECHNIQUE_ID++;
-        this.getRelaxTechniquesAsMap(category).set(relaxTechniques.id, relaxTechniques);
+        relaxTechnique.id = RelaxTechniqueModel.RELAX_TECHNIQUE_ID++;
+        this.getRelaxTechniquesAsMap(category).set(relaxTechnique.id, relaxTechnique);
     }
 
-    getRelaxTechniques() {
-        return Array.from(this.relaxTechniques.keys());
-    }
-    getRelaxTechniquesAsMap(category) {
-        return this.relaxTechniques.get(this.resolveCategory(category));
+    getRelaxTechniques(category) {
+        return Array.from(this.getRelaxTechniquesAsMap(category).values());
     }
 
     resolveCategory(category) {
@@ -61,6 +58,9 @@ class RelaxTechniqueModel {
         return category;
     }
 
+    getRelaxTechniquesAsMap(category) {
+        return this.relaxTechniques.get(this.resolveCategory(category));
+    }
 
     getCategory(id) {
         for (const [ category, relaxTechniquesAsMap] of this.relaxTechniques.entries()) {
@@ -102,7 +102,7 @@ class RelaxTechniqueModel {
 
         const target = this.getRelaxTechnique(id);
         if(!target){
-            throw new Error(`Relaxing technique with $(id) does not exist and cannot be updated`)
+            throw new Error(`Relaxing technique with ${id} does not exist and cannot be updated`)
         }
         Object.assign(target, relaxTechnique);
         return target;
