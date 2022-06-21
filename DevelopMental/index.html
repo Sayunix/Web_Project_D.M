@@ -1,154 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Develop Mental - Improved learning mentality</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+  <meta charset="utf-8">
+  <title>Develop Mental - Improved learning mentality</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Roboto:100,300,400,500,
   700|Philosopher:400,400i,700,700i" rel="stylesheet">
 
-    <!-- Bootstrap css -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap css -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Libraries CSS Files -->
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Logo Animation CSS Files -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <!-- Logo Animation CSS Files -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
 
-    <!-- Main Stylesheet File -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-<div class="page-container">
-    <div class="content-wrap">
-        <header id="header" class="header header-hide">
-            <div class="container">
 
-                <div id="logo" class="pull-left">
-                    <h1><a href="#body" class="scrollto"><span>Develop</span>Mental</a></h1>
-                    <!-- Uncomment below if you prefer to use an image logo -->
-                    <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
-                </div>
+  <header id="header" class="header header-hide">
+    <div class="container">
 
-                <nav id="nav-menu-container">
-                    <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="relax.html">Relax</a></li>
-                        <li><a href="freetime.html">Freetime</a></li>
-                        <li><a href="learning.html">Learning</a></li>
-                        <li><a href="register.html">Register</a></li>
+      <div id="logo" class="pull-left">
+        <h1><a href="index.html" class="scrollto"><span>Develop</span>Mental</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
 
-                    </ul>
-                </nav><!-- #nav-menu-container -->
-            </div>
-        </header><!-- #header -->
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="relax.html">Relax</a></li>
+          <li><a href="freetime.html">Freetime</a></li>
+          <li><a href="learning.html">Learning</a></li>
+          <li><a href="register.html">Register</a></li>
 
-        <!--==========================
-          Welcome Section
-        ============================-->
-
-        <section id="welcome" class="wow fadeIn">
-            <div class="welcome-container">
-                <h1>Welcome to</h1>
-
-                <img src="img/logofarbe.png" width="900px" alt="Logo">
-                <h2>Improve your learning schedule with us</h2>
-            </div>
-        </section>
-
-
-        <!--==========================
-          Testimonials Section
-        ============================-->
-
-        <section id="quote" class="padd-section text-center wow fadeInUp">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-md-8">
-                        <div class="quote-content">
-                            <div id="carousel-example-generic" class="carousel slide">
-
-                                <div class="carousel-inner" role="listbox">
-
-                                    <div class="carousel-item active">
-                                        <div class="top-top">
-
-                                            <h2 id="qoute">Wisdom pearl of the day</h2>
-                                            <h4 id="author"></h4>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-        <!-- JavaScript Libraries -->
-        <script src="lib/jquery/jquery.min.js"></script>
-        <script src="lib/jquery/jquery-migrate.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/superfish/hoverIntent.js"></script>
-        <script src="lib/superfish/superfish.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/modal-video/js/modal-video.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-
-        <!-- Template Main Javascript File -->
-        <script src="js/main.js"></script>
-        <script>
-            let index = Math.floor(Math.random() * 1000);
-            fetch("https://type.fit/api/quotes")
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    let string = data[index].text;
-                    let author = data[index].author;
-                    let p = document.createElement('p');
-                    p.innerHTML = string;
-                    let div = document.querySelector('#qoute');
-                    div.appendChild(p);
-                    let pAuthor = document.querySelector('#author');
-                    pAuthor.innerHTML = author;
-                });
-        </script>
-
+        </ul>
+      </nav><!-- #nav-menu-container -->
     </div>
-    <!--==========================
-        Footer
-      ============================-->
+  </header><!-- #header -->
 
-    <footer class="footer">
+  <!--==========================
+    Welcome Section
+  ============================-->
+
+  <section id="welcome" class="wow fadeIn">
+    <div class="welcome-container">
+      <h1>Welcome to</h1>
+
+      <img src="img/logofarbe.png" width="900px" alt="Logo">
+      <h2>Improve your learning schedule with us</h2>
+    </div>
+  </section>
 
 
-        <div class="copyrights">
+  <!--==========================
+    Quotes Section
+  ============================-->
 
-            <p>&copy; Copyrights Team Develop Mental. All rights reserved.</p>
-            <div class="credits">
-                <a> Designed by Team Develop Mental </a>
+  <section id="quote" class="padd-section text-center wow fadeInUp">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-md-8">
+          <div class="quote-content">
+            <div id="carousel-example-generic" class="carousel slide">
+
+              <div class="carousel-inner" role="listbox">
+
+                <div class="carousel-item active">
+                  <div class="top-top">
+
+                    <h2 id="qoute">Wisdom pearl of the day</h2>
+                    <h4 id="author"></h4>
+
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-    </footer>
-</div>
+
+  <!--==========================
+    Footer
+  ============================-->
+
+  <footer class="footer">
+
+
+    <div class="copyrights">
+
+        <p>&copy; Copyrights Team Develop Mental. All rights reserved.</p>
+        <div class="credits">
+          <a> Designed by Team Develop Mental </a>
+        </div>
+      </div>
+
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/modal-video/js/modal-video.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+  <script>
+    let index = Math.floor(Math.random() * 1000);
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    let string = data[index].text;
+    let author = data[index].author;
+    let p = document.createElement('p');
+    p.innerHTML = string;
+    let div = document.querySelector('#qoute');
+    div.appendChild(p);
+    let pAuthor = document.querySelector('#author');
+    pAuthor.innerHTML = author;
+  });
+  </script>
+  <!--==========================
+      Footer
+    ============================-->
+
+  <footer class="footer">
+
+
+    <div class="copyrights">
+
+      <p>&copy; Copyrights Team Develop Mental. All rights reserved.</p>
+      <div class="credits">
+        <a> Designed by Team Develop Mental </a>
+      </div>
+    </div>
+
+  </footer>
 </body>
 </html>

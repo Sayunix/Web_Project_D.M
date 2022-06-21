@@ -1,4 +1,109 @@
 /*--------------------------------------------------------------
+# Nav 2
+--------------------------------------------------------------*/
+
+.nav-relax, #nav-relax-container * {
+
+    list-style: none;
+    text-align: center;
+    font-size: 16px;
+    position: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+.nav-relax ul {
+    position: center;
+    display: block;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+}
+
+.nav-relax li {
+    position: center;
+    float: left;
+
+}
+
+.nav-relax > li {
+    float: left;
+}
+
+.nav-relax li:hover > ul,
+.nav-relax li.sfHover > ul {
+    display: block;
+}
+
+/* Nav Meu Container */
+#nav-relax-container {
+
+    margin: auto;
+    text-align: center;
+
+}
+
+@media (max-width: 1024px) {
+    #nav-relax-container {
+        display: block;
+    }
+}
+
+/* Nav Meu Styling */
+.nav-relax a {
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+    color: #555;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    outline: none;
+    letter-spacing: 0;
+    transition: 0.4s;
+}
+
+.nav-relax li:hover > a, .nav-relax > .menu-active > a {
+    color: #71c55d;
+}
+
+.nav-relax ul {
+
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 10px;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    background: #fff;
+}
+
+.nav-relax ul li {
+    transition: 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-relax ul li a {
+    padding: 5px 10px;
+    color: #333;
+    transition: 0.3s;
+    display: block;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.nav-relax ul li:hover > a {
+    color: #71c55d;
+}
+
+.nav-relax ul ul {
+    margin: 0;
+}
+
+
+/*--------------------------------------------------------------
 # Progressive Muscle Relaxation Playlist
 --------------------------------------------------------------*/
 /*  Edited with:
@@ -9,7 +114,7 @@
     width: 800px; /* you have to have a size or this method doesn't work */
     height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #000000;
+    border: 10px solid #505050;
 }
 /*--------------------------------------------------------------
 # Autogenic Training Relaxation Playlist
@@ -20,7 +125,7 @@
     width: 800px; /* you have to have a size or this method doesn't work */
     height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #000000;
+    border: 10px solid #505050;;
 }
 
 /*--------------------------------------------------------------
@@ -32,6 +137,6 @@
     width: 800px; /* you have to have a size or this method doesn't work */
     height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #000000;
+    border: 10px solid #505050;
 }
 
