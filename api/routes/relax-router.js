@@ -1,24 +1,33 @@
 const { Router } = require('express');
+const { createRelaxTechnique } = require('../controllers/relax-controller');
 const controller = require('../controllers/relax-controller');
 
 const routes = Router();
 
-routes.get('/RelaxTechniques', controller.getRelaxTechniques);
+routes.get('/categories', controller.getCategories);
+routes.get('/categories/:category/relaxTechniques', controller.getCategoryRelaxTechniques);
+routes.get('/relaxTechniques/:id', controller.getRelaxTechnique);
 
-routes.delete('/RelaxTechniques/:id', controller.deleteRelaxTechnique);
+/* Add a route to create new technique-
 
-module.exports = routes;
+ */
 
-/* --- Task 2 --- Add a route to create new books
-endpoint: /categories/:category/books
-*/
+routes.post('/categories/:category/relaxTechnique', controller.createRelaxTechnique);
 
-routes.post('/RelaxTechniques', controller.addRelaxTechnique());
+/*  Add a technique to update a book
 
-/* --- Task 3 --- Add a route to update a book
-   endpoint: /books/:id
 
 
  */
 
-routes.put('/RelaxTechniques/title', controller.updateRelaxTechnique);
+routes.put('/relaxTechnique/:id', controller.updateRelaxTechnique);
+
+/* Add a route to delete a technique
+
+ */
+
+routes.delete('/relaxTechnique/:id', controller.deleteRelaxTechnique);
+
+
+
+module.exports = routes;

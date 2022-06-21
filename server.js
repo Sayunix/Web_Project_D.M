@@ -6,6 +6,7 @@ const app = express();
 const path = require('path');
 const { users } = require('./data');
 const {userAuth} = require('./userAuth');
+const port = process.env.PORT ?? 5000;
 
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(session({
@@ -35,7 +36,7 @@ app.get('/', function(req, res) {
   });
 
 app.post('/auth',userAuth, function(req,res){
-    
+
 });
 
 app.post('/logout',function(req,res){
@@ -56,3 +57,18 @@ app.listen(5000, (error) => {
         console.log(`Server listening at http://localhost:5000`);
     }
 });
+
+const relaxRouter = require('./api/routes/relax-router');
+
+// Serving static files from folder 'files'
+app.use(express.static(path.join(__dirname, 'files')));
+
+// Parse urlencoded bodies (for form data)
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Parse JSON bodies (from requests)
+app.use(bodyParser.json());
+
+// Include the book routes
+app.use('/api', relaxRouter);
+

@@ -1,29 +1,76 @@
-/* A class representing a category of books. It holds all the books belonging to this category. */
-const url = require("url");
-const {text} = require("express");
+/* A class representing a category of techniques. It holds all the techniques belonging to this category. */
+class Category {
+    constructor(title, name) {
+        this.name = name;
+        this.title = title;
+    }
+}
 
 class RelaxTechnique {
-    constructor(title, text) {
+    constructor(title, video, text) {
 
         this.title = title;
+        this.video= video;
         this.text = text;
     }
 }
 
 class RelaxTechniqueModel {
-    static TECHNIQUE_ID = 1;
+    static CATEGORY_ID = 1;
+    static RELAXTECHNIQUE_ID = 1;
 
     constructor() {
         this.relaxTechniques = new Map();
     }
 
-    addRelaxTechnique(relaxTechnique) {
-        relaxTechnique.id = RelaxTechniqueModel.TECHNIQUE_ID++;
-        this.relaxTechniques.set(relaxTechnique, relaxTechnique.id);
+    addCategory(category) {
+        if (!this.relaxTechniques.get(category)) {
+            category.id = RelaxTechniqueModel.CATEGORY_ID++;
+            this.relaxTechniques.set(category, new Map())
+        }
+    }
+    getCategories() {
+        return Array.from(this.relaxTechniques.keys());
+    }
+
+    addRelaxTechnique(category, relaxTechniques) {
+        if (!this.relaxTechniques.get(category)) {
+            throw new Error(`Unknown relaxing technique category ${category.name}`)
+        }
+        relaxTechniques.id = RelaxTechniqueModel.RELAXTECHNIQUE_ID++;
+        this.getRelaxTechniquesAsMap(category).set(relaxTechniques.id, relaxTechniques);
     }
 
     getRelaxTechniques() {
         return Array.from(this.relaxTechniques.keys());
+    }
+    getRelaxTechniquesAsMap(category) {
+        return this.relaxTechniques.get(this.resolveCategory(category));
+    }
+
+    resolveCategory(category) {
+        if (typeof category === "string") {
+            for (const [_category, relaxTechniques] of this.relaxTechniques.entries()) {
+                if (_category.name === category) {
+                    return _category;
+                }
+            }
+            throw new Error(`Unknown relax technique category ${category}`)
+        }
+
+        return category;
+    }
+
+
+    getCategory(id) {
+        for (const [ category, relaxTechniquesAsMap] of this.relaxTechniques.entries()) {
+            const relaxTechniques = Array.from(relaxTechniquesAsMap.values());
+            if (relaxTechniques.find(relaxTechnique => relaxTechnique.id === id)) {
+                return category;
+            }
+        }
+
+        return null;
     }
 
     getRelaxTechnique(id) {
@@ -33,27 +80,62 @@ class RelaxTechniqueModel {
 
         let relaxTechnique = null;
 
-        for (let i = 0; i < this.getRelaxTechniques().length; i++) {
-            if (this.getRelaxTechniques()[i].id === id) {
-                relaxTechnique = this.getRelaxTechniques()[i];
-            }
+        const category = this.getCategory(id);
+        if (category) {
+            relaxTechnique = this.relaxTechniques.get(category).get(id);
         }
 
         return relaxTechnique;
     }
 
-    deleteRelaxTechnique(id) {
-        this.relaxTechniques.delete(this.getRelaxTechnique(id));
+    createRelaxTechnique(category, relaxTechnique) {
+
+         //Add the received relax technique to the given category in the model and return it. */
+
+        this.addRelaxTechnique(category,relaxTechnique);
+        return relaxTechnique;
+
     }
+
+    updateRelaxTechnique(id, relaxTechnique) {
+        //Update the technique with the given id in the model */
+
+        const target = this.getRelaxTechnique(id);
+        if(!target){
+            throw new Error('Relaxing technique with $(id) does not exist and cannot be updated')
+        }
+        Object.assign(target, relaxTechnique);
+        return target;
+
+    }
+
+
+    deleteRelaxTechnique(id) {
+        //- Delete the technique with the given id from the model
+
+        let removed = false;
+        const category = this.getCategory(id);
+        if(category){
+            removed = this.relaxTechniques.get(category).delete(id);
+        }
+        return removed;
+
+    }
+
 }
 
 const model = new RelaxTechniqueModel();
 
-const PMRTechnique = new RelaxTechnique( "Progressive Muscle Relaxation by Jacbson",  "henlo bitte halo domo arigato")
-model.addRelaxTechnique(PMRTechnique);
-const ATTechnique = new RelaxTechnique( "Autogenic Training",  "Heast");
-model.addRelaxTechnique(ATTechnique);
-const MusicRelax = new RelaxTechnique("Relaxation Music",  "Kannst bitte 1x leiwand sein?");
-model.addRelaxTechnique(MusicRelax);
+const PMRCategory = new Category("PMR", "Progressive Muscle Relaxation by Jacbson");
+model.addCategory(PMRCategory);
+model.addRelaxTechnique(PMRCategory, new RelaxTechnique("Progressive Muscle Relaxation by Jacbson", "VIDEO", "text"));
+
+const ATCategory = new Category("AT", "Autogenic Training");
+model.addCategory(ATCategory);
+model.addRelaxTechnique(ATCategory, new RelaxTechnique("Autogenic Training", "ADD VIDEO", "Texti"));
+
+const RelaxMusic = new Category("RM", "Relaxing Music");
+model.addCategory(RelaxMusic);
+model.addRelaxTechnique(RelaxMusic, new RelaxTechnique("Relaxing music", "ADD Music VIDEO", "Texti vong musik" ));
 
 module.exports = model;
