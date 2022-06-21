@@ -8,7 +8,7 @@ function userAuth(req,res,next){
             req.session.username = username;
             res.redirect('/');
         }else{
-            res.redirect('/login.html')
+            res.redirect('/login.html');
         }
         res.end();
     }else{
