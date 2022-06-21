@@ -126,15 +126,15 @@ class RelaxTechniqueModel {
 
 const model = new RelaxTechniqueModel();
 
-const pmrCategory = new Category("PMR", "Progressive Muscle Relaxation by Jacbson");
+const pmrCategory = new Category("Progressive Muscle Relaxation by Jacbson", "PMR", );
 model.addCategory(pmrCategory);
 model.addRelaxTechnique(pmrCategory, new RelaxTechnique("Progressive Muscle Relaxation by Jacbson", "VIDEO", "text"));
 
-const atCategory = new Category("AT", "Autogenic Training");
+const atCategory = new Category("Autogenic Training", "AT");
 model.addCategory(atCategory);
 model.addRelaxTechnique(atCategory, new RelaxTechnique("Autogenic Training", "ADD VIDEO", "Texti"));
 
-const relaxMusic = new Category("RM", "Relaxing Music");
+const relaxMusic = new Category( "Relaxing Music", "RM",);
 model.addCategory(relaxMusic);
 model.addRelaxTechnique(relaxMusic, new RelaxTechnique("Relaxing music", "ADD Music VIDEO", "Texti vong musik" ));
 

@@ -17,7 +17,7 @@ routes.post('/categories/:category/relaxTechniques', controller.createRelaxTechn
 /*  Add a technique to update a book
  */
 
-routes.put('/relaxTechnique´s/:id', controller.updateRelaxTechnique);
+routes.put('/relaxTechniques/:id', controller.updateRelaxTechnique);
 
 /* Add a route to delete a technique
 
