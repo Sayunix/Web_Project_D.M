@@ -7,8 +7,9 @@ class Category {
 }
 
 class RelaxTechnique {
-    constructor(title, video, text) {
+    constructor(name, title, video, text) {
 
+        this.name = name;
         this.title = title;
         this.video= video;
         this.text = text;
@@ -128,14 +129,14 @@ const model = new RelaxTechniqueModel();
 
 const pmrCategory = new Category("Progressive Muscle Relaxation by Jacbson", "PMR", );
 model.addCategory(pmrCategory);
-model.addRelaxTechnique(pmrCategory, new RelaxTechnique("Progressive Muscle Relaxation by Jacbson", "VIDEO", "text"));
+model.addRelaxTechnique(pmrCategory, new RelaxTechnique("PMR1","Progressive Muscle Relaxation by Jacbson", "https://www.youtube.com/embed/watch?v=86HUcX8ZtAk&list=PL-yvVpWvnO7bM1-Yeueq1RxTYTzBaD73U", "text"));
 
 const atCategory = new Category("Autogenic Training", "AT");
 model.addCategory(atCategory);
-model.addRelaxTechnique(atCategory, new RelaxTechnique("Autogenic Training", "ADD VIDEO", "Texti"));
+model.addRelaxTechnique(atCategory, new RelaxTechnique("AT1", "Autogenic Training", "ADD VIDEO", "Texti"));
 
 const relaxMusic = new Category( "Relaxing Music", "RM",);
 model.addCategory(relaxMusic);
-model.addRelaxTechnique(relaxMusic, new RelaxTechnique("Relaxing music", "ADD Music VIDEO", "Texti vong musik" ));
+model.addRelaxTechnique(relaxMusic, new RelaxTechnique("RM1", "Relaxing music", "ADD Music VIDEO", "Texti vong musik" ));
 
 module.exports = model;
