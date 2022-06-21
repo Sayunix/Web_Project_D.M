@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const path = require('path');
 const { users } = require('./data');
+const {userAuth} = require('./userAuth');
 
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(session({
@@ -33,23 +34,8 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
 
-app.post('/auth', function(req,res){
-    let username = req.body.name;
-    let password = req.body.password;
-    if(username && password){
-        if(users.find(user => user.name === username && user.password === password)){
-            req.session.loggedin = true;
-            req.session.username = username;
-            res.redirect('/');
-        }else{
-            res.send('Incorrect Username and/or Password!');
-            alert('Wrong username');
-        }
-        res.end();
-    }else{
-        res.send('Please enter Username and Password!');
-        res.end();
-    }
+app.post('/auth',userAuth, function(req,res){
+    
 });
 
 app.post('/logout',function(req,res){
