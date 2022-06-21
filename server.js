@@ -69,6 +69,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Parse JSON bodies (from requests)
 app.use(bodyParser.json());
 
-// Include the book routes
+// Include the technique routes
 app.use('/api', relaxRouter);
 

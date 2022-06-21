@@ -102,7 +102,7 @@ class RelaxTechniqueModel {
 
         const target = this.getRelaxTechnique(id);
         if(!target){
-            throw new Error('Relaxing technique with $(id) does not exist and cannot be updated')
+            throw new Error(`Relaxing technique with $(id) does not exist and cannot be updated`)
         }
         Object.assign(target, relaxTechnique);
         return target;
@@ -126,16 +126,16 @@ class RelaxTechniqueModel {
 
 const model = new RelaxTechniqueModel();
 
-const PMRCategory = new Category("PMR", "Progressive Muscle Relaxation by Jacbson");
-model.addCategory(PMRCategory);
-model.addRelaxTechnique(PMRCategory, new RelaxTechnique("Progressive Muscle Relaxation by Jacbson", "VIDEO", "text"));
+const pmrCategory = new Category("PMR", "Progressive Muscle Relaxation by Jacbson");
+model.addCategory(pmrCategory);
+model.addRelaxTechnique(pmrCategory, new RelaxTechnique("Progressive Muscle Relaxation by Jacbson", "VIDEO", "text"));
 
-const ATCategory = new Category("AT", "Autogenic Training");
-model.addCategory(ATCategory);
-model.addRelaxTechnique(ATCategory, new RelaxTechnique("Autogenic Training", "ADD VIDEO", "Texti"));
+const atCategory = new Category("AT", "Autogenic Training");
+model.addCategory(atCategory);
+model.addRelaxTechnique(atCategory, new RelaxTechnique("Autogenic Training", "ADD VIDEO", "Texti"));
 
-const RelaxMusic = new Category("RM", "Relaxing Music");
-model.addCategory(RelaxMusic);
-model.addRelaxTechnique(RelaxMusic, new RelaxTechnique("Relaxing music", "ADD Music VIDEO", "Texti vong musik" ));
+const relaxMusic = new Category("RM", "Relaxing Music");
+model.addCategory(relaxMusic);
+model.addRelaxTechnique(relaxMusic, new RelaxTechnique("Relaxing music", "ADD Music VIDEO", "Texti vong musik" ));
 
 module.exports = model;
