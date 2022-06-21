@@ -129,7 +129,7 @@ const model = new RelaxTechniqueModel();
 
 const pmrCategory = new Category("Progressive Muscle Relaxation by Jacbson", "PMR", );
 model.addCategory(pmrCategory);
-model.addRelaxTechnique(pmrCategory, new RelaxTechnique("PMR1","Progressive Muscle Relaxation by Jacbson", "VIDEO", "text"));
+model.addRelaxTechnique(pmrCategory, new RelaxTechnique("PMR1","Progressive Muscle Relaxation by Jacbson", "https://www.youtube.com/embed/watch?v=86HUcX8ZtAk&list=PL-yvVpWvnO7bM1-Yeueq1RxTYTzBaD73U", "text"));
 
 const atCategory = new Category("Autogenic Training", "AT");
 model.addCategory(atCategory);

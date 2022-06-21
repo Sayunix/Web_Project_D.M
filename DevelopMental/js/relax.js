@@ -1,4 +1,4 @@
-class RelaxElementCreator {
+class ElementCreator {
     constructor(tag) {
         this.element = document.createElement(tag);
     }
@@ -49,11 +49,6 @@ class RelaxElementCreator {
     }
 }
 
-/* A class representing a category of books. It holds all the books belonging to this category.
- *
- * If you wonder what the three dots in the constructor are all about, see:
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
- */
 class Category {
     constructor(title, id, ...relaxTechniques) {
         this.title = title;
@@ -62,13 +57,8 @@ class Category {
     }
 }
 
-/* A class representing a book in one of the categories. It contains getters for the ids
- * that represent the book in the main content and in the shopping cart.
- */
 class RelaxTechnique {
 
-    /* If you want to know more about this form of getters, read this:
-     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get */
     get id() {
         return this._id;
     }
@@ -79,18 +69,9 @@ class RelaxTechnique {
 
 }
 
-/* The shopping cart. Maintains a list of books, renders the items in the cart
- * and calculates renders the total in the cart. */
+var tmp = 0;
 
-
-/* The BookStore class is what renders the books in the DOM and houses the shopping cart. */
-class RelaxTechnique {
-    /* MAX_QUANTITY is the maximum quantity a user can order. You should use this constant in
-     * your code to control the number of options you create in the quantity select elements.
-     *
-     * If you want to know more about static properties, read this article:
-     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
-     */
+class RelaxTechniqueSection {
 
     add(categories) {
         for (const category of categories) {
@@ -114,53 +95,67 @@ class RelaxTechnique {
         }
     }
 
+    addCategoryToDOM(category) {
+        let main = document.getElementById("relax-main");
+        new ElementCreator("section")
+            .id(category.name)
+            .append(new ElementCreator("h1").text(category.title))
+            .appendTo(main);
+    }
+
+    addRelaxTechniqueToDOM(category, relaxTechnique) {
+
+        new ElementCreator("article")
+            .id(relaxTechnique.id)
+            .append(new ElementCreator("div")
+                .id("div-video-"+relaxTechnique.name)
+                .append(new ElementCreator("iframe")
+                    .id("iframe-video-"+relaxTechnique.name)))
+            .append(new ElementCreator("h2")
+                .id("h2-technique-"+relaxTechnique.name)
+                .text(relaxTechnique.title))
+            .append(new ElementCreator("p")
+                .id("p-technique-"+relaxTechnique.name)
+                .text(relaxTechnique.text))
+            .appendTo(document.querySelector(`section#${category.name}`));
+
+        document.getElementById("div-video-"+relaxTechnique.name).className = "video-container";
+
+        let iframe = document.getElementById("iframe-video-"+relaxTechnique.name);
+        iframe.setAttribute("width","780");
+        iframe.setAttribute("height","430");
+        iframe.setAttribute("src",relaxTechnique.video);
+        iframe.setAttribute("title","Youtube Video Player");
+        iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;");
+    }
+
 
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
-    const relaxTechnique = new RelaxTechnique ();
-
-    /* --- Task 1 ---
-     * (1) Use the fetch API to retrieve the book categories from the backend
-     * and insert a link for each category in the DOM, e.g.,
-     *
-     * <li>
-     *   <a href="#javascript">JavaScript</a>
-     * </li>
-     *
-     * Make sure that the categories in the nav element appear in the same
-     * order in which they are returned by the server.
-     *
-     * (2) Add a click listener to the link, which, when activated, loads
-     * the books for the selected category from the server. When the data
-     * is received, use bookStore.addToDOM(category, books) to add the
-     * books to the DOM.
-     *
-     * (3) Then, programatically click the first link to load the books of
-     * the first category.
-     */
+    const relaxTechniqueSection = new RelaxTechniqueSection ();
 
     fetch("/api/categories")
         .then(response => response.json())
         .then(categories => {
             for(const category of Array.from(categories).reverse()) {
-                const list = document.querySelector("nav>ul");
+                const list = document.getElementById("nav-relax");
 
-                new RelaxElementCreator("li")
-                    .append(new RelaxElementCreator("a")
+                new ElementCreator("li")
+                    .append(new ElementCreator("a")
                         .with("href", `#${category.name}`)
                         .text(category.title)
                         .listener("click",() => {
                             fetch(`/api/categories/${category.name}/relaxTechniques`)
                                 .then(response => response.json())
                                 .then(relaxTechniques => {
-                                    relaxTechnique.addToDOM(category, relaxTechniques);
+                                    relaxTechniqueSection.addToDOM(category, relaxTechniques);
                                 });
                         }))
                     .prependTo(list);
             }
-            document.querySelector("nav li a").click();
+
         });
 
 
