@@ -1,7 +1,7 @@
 const model = require("../models/relax-models");
 
 class RelaxController {
-    static MANDATORY = ["title", "video", "text"];
+    static MANDATORY = ["name", "title", "video", "text"];
 
     getCategories(req, res) {
         res.send(model.getCategories());

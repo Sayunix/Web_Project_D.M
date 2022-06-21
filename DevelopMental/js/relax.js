@@ -54,15 +54,37 @@ class RelaxElementCreator {
  * If you wonder what the three dots in the constructor are all about, see:
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
  */
-class RelaxTechnique {
-    constructor(title, id) {
+class Category {
+    constructor(title, id, ...relaxTechniques) {
         this.title = title;
         this.id = id;
+        this.relaxTechniques = relaxTechniques;
     }
 }
 
+/* A class representing a book in one of the categories. It contains getters for the ids
+ * that represent the book in the main content and in the shopping cart.
+ */
+class RelaxTechnique {
+
+    /* If you want to know more about this form of getters, read this:
+     * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get */
+    get id() {
+        return this._id;
+    }
+
+    set id(id) {
+        this._id = "id" + id;
+    }
+
+}
+
+/* The shopping cart. Maintains a list of books, renders the items in the cart
+ * and calculates renders the total in the cart. */
+
+
 /* The BookStore class is what renders the books in the DOM and houses the shopping cart. */
-class RelaxMethod {
+class RelaxTechnique {
     /* MAX_QUANTITY is the maximum quantity a user can order. You should use this constant in
      * your code to control the number of options you create in the quantity select elements.
      *
@@ -70,81 +92,79 @@ class RelaxMethod {
      * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static
      */
 
-    add(relaxTechniques) {
+    add(categories) {
+        for (const category of categories) {
+            this.addCategoryToDOM(category);
+            for (const relaxTechnique of category.relaxTechniques) {
+                this.addRelaxTechniqueToDOM(category, relaxTechnique);
+            }
+        }
+    }
+
+    addToDOM(category, relaxTechniques) {
+
+        for (const section of document.querySelectorAll("section")) {
+            section.remove();
+        }
+
+        this.addCategoryToDOM(category);
+
         for (const relaxTechnique of relaxTechniques) {
-            this.addTechniqueToDOM(relaxTechnique);
+            this.addRelaxTechniqueToDOM(category, Object.assign(new RelaxTechnique(), relaxTechnique));
         }
     }
 
-    addToDOM(relaxTechnique) {
 
-        for (const article of document.querySelectorAll("article")) {
-            article.remove();
-        }
-
-        this.addTechniqueToDOM(relaxTechnique);
-    }
-
-    addTechniqueToDOM(relaxTechnique) {
-        new ElementCreator("article")
-            .id(relaxTechnique.id)
-            .append(new RelaxElementCreator("div")
-                .id("div-"+relaxTechnique.title)
-                .append(new ElementCreator("h3")
-                    .id("h3-"+relaxTechnique.title)
-                    .text(relaxTechnique.text))
-                .append(new ElementCreator("span")
-                    .id("span-"+relaxTechnique.name)
-                    .text(relaxTechnique.smalldescription))
-                .append(new ElementCreator("p")
-                    .id("p-"+relaxTechnique.name)
-                    .text(relaxTechnique.description)))
-            .listener("click", () => {
-                if (document.getElementById("text") != null){
-                    document.getElementById("text").remove();
-                }
-                new RelaxElementCreator("article")
-                    .id("text")
-                    .append(new RelaxElementCreator("h2")
-                        .id("h2-text")
-                        .text(relaxTechnique.title))
-                    .append(new RelaxElementCreator("p")
-                        .id("p-text")
-                        .text(relaxTechnique.text+"<br><br>"))
-                    .append(new RelaxElementCreator("p")
-                        .id("source-text")
-                        .text("Source: "+relaxTechnique.source))
-                    .appendTo(document.getElementById("Section-text"))
-                document.getElementById("h2-text").scrollIntoView({behavior: 'smooth', block: 'start'});
-
-            })
-            .insertBefore(document.querySelector("section"));
-
-
-        document.getElementById(relaxTechnique.id).className = "card";
-        document.getElementById("div-"+relaxTechnique.name).className = "card_content";
-        document.getElementById("h3-"+relaxTechnique.name).className = "card_title";
-        document.getElementById("span-"+relaxTechnique.name).className = "card_subtitle";
-        document.getElementById("p-"+relaxTechnique.name).className = "card_description";
-
-        document.getElementById(relaxTechnique.id).style.background = "url("+relaxTechnique.cover+") center no-repeat";
-        document.getElementById(relaxTechnique.id).style.backgroundSize = "cover";
-
-
-    }
 }
 
-document.addEventListener("DOMContentLoaded", async function (event) {
+document.addEventListener("DOMContentLoaded", function (event) {
 
-    const relax = new relaxMethod();
+    const relaxTechnique = new RelaxTechnique ();
 
+    /* --- Task 1 ---
+     * (1) Use the fetch API to retrieve the book categories from the backend
+     * and insert a link for each category in the DOM, e.g.,
+     *
+     * <li>
+     *   <a href="#javascript">JavaScript</a>
+     * </li>
+     *
+     * Make sure that the categories in the nav element appear in the same
+     * order in which they are returned by the server.
+     *
+     * (2) Add a click listener to the link, which, when activated, loads
+     * the books for the selected category from the server. When the data
+     * is received, use bookStore.addToDOM(category, books) to add the
+     * books to the DOM.
+     *
+     * (3) Then, programatically click the first link to load the books of
+     * the first category.
+     */
 
-    fetch("api/relaxTechniques")
+    fetch("/api/categories")
         .then(response => response.json())
-        .then(relaxTechniques => {
-            for (const technique of Array.from(relaxTechniques)) {
-                relax.addTechniqueToDOM(relaxTechnique);
+        .then(categories => {
+            for(const category of Array.from(categories).reverse()) {
+                const list = document.querySelector("nav>ul");
+
+                new RelaxElementCreator("li")
+                    .append(new RelaxElementCreator("a")
+                        .with("href", `#${category.name}`)
+                        .text(category.title)
+                        .listener("click",() => {
+                            fetch(`/api/categories/${category.name}/relaxTechniques`)
+                                .then(response => response.json())
+                                .then(relaxTechniques => {
+                                    relaxTechnique.addToDOM(category, relaxTechniques);
+                                });
+                        }))
+                    .prependTo(list);
             }
+            document.querySelector("nav li a").click();
         });
+
+
+
+
 });
 
