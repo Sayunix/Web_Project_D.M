@@ -1,6 +1,3 @@
-/* A class representing a category of books. It holds all the books belonging to this category. */
-const url = require("url");
-
 class Technique {
     constructor(name, title, cover, smalldescription, description, text, source) {
         this.name = name;
@@ -36,7 +33,7 @@ class TechniqueModel {
 
         let technique = null;
 
-        for (var i = 0; i < this.getTechniques().length; i++) {
+        for (let i = 0; i < this.getTechniques().length; i++) {
             if (this.getTechniques()[i].id === id){
                 technique = this.getTechniques()[i];
             }
