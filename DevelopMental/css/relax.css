@@ -7,15 +7,13 @@
     list-style: none;
     text-align: center;
     font-size: 16px;
-    position: center;
     width: 100%;
     margin: 0 auto;
-    display: block;
+    display: inline;
 }
 
 .nav-relax ul {
     position: center;
-    display: block;
     top: 100%;
     left: 0;
     z-index: 99;
@@ -24,16 +22,18 @@
 .nav-relax li {
     position: center;
     float: left;
+    display: inline;
 
 }
 
 .nav-relax > li {
     float: left;
+    display: inline;
 }
 
 .nav-relax li:hover > ul,
 .nav-relax li.sfHover > ul {
-    display: block;
+    display: inline
 }
 
 /* Nav Meu Container */
@@ -46,7 +46,7 @@
 
 @media (max-width: 1024px) {
     #nav-relax-container {
-        display: block;
+        display: inline;
     }
 }
 
@@ -54,7 +54,7 @@
 .nav-relax a {
     padding: 8px 8px;
     text-decoration: none;
-    display: block;
+    display: inline;
     color: #555;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -71,7 +71,7 @@
 .nav-relax ul {
 
     list-style-type: none;
-    display: block;
+    display: inline;
     margin: 0;
     padding: 10px;
     box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
@@ -82,6 +82,7 @@
     transition: 0.3s;
     margin-left: auto;
     margin-right: auto;
+    display: inline;
 }
 
 .nav-relax ul li a {
