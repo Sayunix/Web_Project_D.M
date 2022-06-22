@@ -45,7 +45,8 @@ app.post('/logout',function(req,res){
         req.session.destroy();
         res.redirect('/');
     }else{
-        res.send('Please login first to log out');
+        res.redirect('/login.html');
+        //res.send('Please login first to log out');
     }
 });
 
