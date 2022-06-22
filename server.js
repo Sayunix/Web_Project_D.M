@@ -41,12 +41,12 @@ app.post('/auth',userAuth, function(req,res){
 
 app.post('/logout',function(req,res){
     if(req.session.loggedin){
-        let username = req.session.username;
         req.session.loggedin = false;
         req.session.destroy();
         res.redirect('/');
     }else{
-        res.send('Please login first to log out');
+        res.redirect('/login.html');
+        //res.send('Please login first to log out');
     }
 });
 
@@ -60,15 +60,5 @@ app.listen(5000, (error) => {
 
 const relaxRouter = require('./api/routes/relax-router');
 
-// Serving static files from folder 'files'
-app.use(express.static(path.join(__dirname, 'files')));
-
-// Parse urlencoded bodies (for form data)
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Parse JSON bodies (from requests)
-app.use(bodyParser.json());
-
-// Include the book routes
 app.use('/api', relaxRouter);
 

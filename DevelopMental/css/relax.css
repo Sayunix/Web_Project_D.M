@@ -1,131 +1,18 @@
 /*--------------------------------------------------------------
-# Nav 2
+# Youtube Video
 --------------------------------------------------------------*/
 
-.nav-relax, #nav-relax-container * {
-
-    list-style: none;
-    text-align: center;
-    font-size: 16px;
-    width: 100%;
-    margin: 0 auto;
-    display: inline;
-}
-
-.nav-relax ul {
-    position: center;
-    top: 100%;
-    left: 0;
-    z-index: 99;
-}
-
-.nav-relax li {
-    position: center;
-    float: left;
-    display: inline;
-
-}
-
-.nav-relax > li {
-    float: left;
-    display: inline;
-}
-
-.nav-relax li:hover > ul,
-.nav-relax li.sfHover > ul {
-    display: inline
-}
-
-/* Nav Meu Container */
-#nav-relax-container {
-
-    margin: auto;
-    text-align: center;
-
-}
-
-@media (max-width: 1024px) {
-    #nav-relax-container {
-        display: inline;
-    }
-}
-
-/* Nav Meu Styling */
-.nav-relax a {
-    padding: 8px 8px;
-    text-decoration: none;
-    display: inline;
-    color: #555;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    outline: none;
-    letter-spacing: 0;
-    transition: 0.4s;
-}
-
-.nav-relax li:hover > a, .nav-relax > .menu-active > a {
-    color: #71c55d;
-}
-
-.nav-relax ul {
-
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding: 10px;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-    background: #fff;
-}
-
-.nav-relax ul li {
-    transition: 0.3s;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline;
-}
-
-.nav-relax ul li a {
-    padding: 5px 10px;
-    color: #333;
-    transition: 0.3s;
+.video-container {
     display: block;
-    font-size: 14px;
-    text-transform: none;
-}
-
-.nav-relax ul li:hover > a {
-    color: #71c55d;
-}
-
-.nav-relax ul ul {
-    margin: 0;
-}
-
-
-/*--------------------------------------------------------------
-# Progressive Muscle Relaxation Playlist
---------------------------------------------------------------*/
-/*  Edited with:
-    https://stackoverflow.com/questions/22433616/how-can-i-align-youtube-embedded-video-in-the-center-in-bootstrap */
-
-.PMR-container {
-    display: block;
-    width: 800px; /* you have to have a size or this method doesn't work */
-    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    width: 350px; /* you have to have a size or this method doesn't work */
+    height: 196px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #505050;
+    border: 10px solid #71c55d;
 }
-/*--------------------------------------------------------------
-# Autogenic Training Relaxation Playlist
---------------------------------------------------------------*/
 
-.AT-container {
-    display: block;
-    width: 800px; /* you have to have a size or this method doesn't work */
-    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
-    margin: 150px auto auto;
-    border: 10px solid #505050;;
+.yt-video{
+    width: 330px;
+    height: 176px;
 }
 
 /*--------------------------------------------------------------
@@ -134,9 +21,109 @@
 
 .youtube-container {
     display: block;
-    width: 800px; /* you have to have a size or this method doesn't work */
-    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    width: 350px; /* you have to have a size or this method doesn't work */
+    height: 196px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #505050;
+    border: 10px solid #71c55d;
+}
+
+
+/*--------------------------------------------------------------
+# Youtube Video
+--------------------------------------------------------------*/
+@media (min-width: 900px) {
+
+    .video-container {
+        display: block;
+        width: 800px; /* you have to have a size or this method doesn't work */
+        height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+        margin: 150px auto auto;
+        border: 10px solid #71c55d;
+    }
+
+    .yt-video{
+        width: 780px;
+        height: 430px;
+    }
+
+/*--------------------------------------------------------------
+ # Youtube Music Container
+--------------------------------------------------------------*/
+
+    .youtube-container {
+        display: block;
+        width: 800px; /* you have to have a size or this method doesn't work */
+        height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+        margin: 150px auto auto;
+        border: 10px solid #71c55d;
+    }
+}
+
+
+h2 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 45px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0 5px 0 5px;
+    text-align: center;
+}
+
+p #break {
+
+    margin-top: 300px;
+}
+
+h2 {
+
+    padding-top: 250px;
+}
+
+@media (min-width: 900px) {
+
+    p {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        margin: 0 300px 0 300px;
+        text-align: center;
+    }
+
+
+#nav-relax {
+
+    font-family: "Roboto", sans-serif;
+    color: #4e555b;
+    display: inline-flex;
+    list-style-type: none;
+    font-size: 20px;
+    padding-top: 50px;
+    transition: 0.4s;
+    text-align: center;
+
+
+}
+}
+
+#nav-relax li {
+
+    padding-right: 50px;
+    text-align: center;
+    color: #555;
+}
+
+#nav-relax ul li {
+
+    text-align: center;
 }
 

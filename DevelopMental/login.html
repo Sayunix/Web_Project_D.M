@@ -35,13 +35,13 @@
 </head>
 
 <body>
-<div class="page-container">
+<div class="page-container" id="page-container">
     <div class="content-wrap">
         <header id="header" class="header header-hide">
             <div class="container">
 
                 <div id="logo" class="pull-left">
-                    <h1><a href="#body" class="scrollto"><span>Develop</span>Mental</a></h1>
+                    <h1><a href="index.html" class="scrollto"><span>Develop</span>Mental</a></h1>
                     <!-- Uncomment below if you prefer to use an image logo -->
                     <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
                 </div>
@@ -50,7 +50,7 @@
                     <ul class="nav-menu">
 
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#Team">Team</a></li>
                         <li><a href="relax.html">Relax</a></li>
                         <li><a href="freetime.html">Freetime</a></li>
                         <li><a href="learning.html">Learning</a></li>
@@ -61,24 +61,25 @@
             </div>
         </header>
 
-        <div class="container mt-4">
+        <div class="container mt-4" id="Top">
             <div class="card">
                 <div class="card-header">
-                    Register Form
+                    Login Form
                 </div>
                 <div class="card-body">
                     <form action="auth" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name">
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-
+                        <div><p id="error_message" name="error_message"></p></div>
                         <button type="submit" class="btn btn-primary">Login</button>
+                        
 
                     </form>
                     <form action="/logout" method="post">
@@ -87,8 +88,6 @@
                 </div>
             </div>
         </div>
-
-
         <br><br><br><br>
 
         <!-- <h1>Please try again!</h1> -->
@@ -108,7 +107,7 @@
 
         <div class="copyrights">
 
-            <p>&copy; Copyrights Team Develop Mental. All rights reserved.</p>
+            <p>FH Campus Wien, Favoritenstraße 226, 1100 Wien</p>
             <div class="credits">
                 <a> Designed by Team Develop Mental </a>
             </div>

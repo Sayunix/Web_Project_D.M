@@ -11,8 +11,6 @@
     text-align: center;
 }
 
-
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
@@ -76,7 +74,7 @@ body {
     outline-color: #242329;
 }
 
-#team-span{
+.team-h2{
     font-family: "Philosopher", sans-serif;
 }
 

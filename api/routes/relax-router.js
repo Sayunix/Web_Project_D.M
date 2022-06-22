@@ -12,21 +12,18 @@ routes.get('/relaxTechniques/:id', controller.getRelaxTechnique);
 
  */
 
-routes.post('/categories/:category/relaxTechnique', controller.createRelaxTechnique);
+routes.post('/categories/:category/relaxTechniques', controller.createRelaxTechnique);
 
-/*  Add a technique to update a book
-
-
-
+/*  Add a technique to update a technique
  */
 
-routes.put('/relaxTechnique/:id', controller.updateRelaxTechnique);
+routes.put('/categories/:category/relaxTechniques/:id', controller.updateRelaxTechnique);
 
 /* Add a route to delete a technique
 
  */
 
-routes.delete('/relaxTechnique/:id', controller.deleteRelaxTechnique);
+routes.delete('/categories/:category/relaxTechniques/:id', controller.deleteRelaxTechnique);
 
 
 

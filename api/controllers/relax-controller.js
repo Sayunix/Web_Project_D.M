@@ -1,7 +1,7 @@
 const model = require("../models/relax-models");
 
 class RelaxController {
-    static MANDATORY = ["title", "video", "text"];
+    static MANDATORY = ["name", "title", "video", "text"];
 
     getCategories(req, res) {
         res.send(model.getCategories());
@@ -11,6 +11,7 @@ class RelaxController {
         res.send(model.getRelaxTechniques(req.params.category));
     }
 
+    //req(Request) = Client to Sever, res(Response)= Response from Server to client
     getRelaxTechnique(req, res) {
         const relaxTechnique = model.getRelaxTechnique(parseInt(req.params.id));
         if (relaxTechnique) {
@@ -50,49 +51,31 @@ class RelaxController {
 
     createRelaxTechnique = (req, res) => {
 
-        /* --- Task 2 ---
-         * Add the book given in the request to the model.
-         * Check the incoming data! The category must exist, the book data
-         * include all necessary properties (you can use
-         * checkBookProperties(res, req.body) to do that).
-         *
-         * After you created the book in the model, return it in the response
-         */
         const categoryAsString = req.params.category;
-        const book = req.body;
+        const relaxTechnique = req.body;
         try{
             const category = model.resolveCategory(categoryAsString);
-            if(this.checkRelaxTechniqueProperties(res, book)){
-                res.send(model.createRelaxTechnique(category, book));
+            if(this.checkRelaxTechniqueProperties(res, relaxTechnique)){
+                res.send(model.createRelaxTechnique(category, relaxTechnique));
             }
 
         }catch(e){
-            res.status(404).send('Category ${categoryAsString} does not exist. Technique cannot be created.');
+            res.status(404).send(`Category ${categoryAsString} does not exist. Technique cannot be created.`);
         }
 
 
     }
 
     updateRelaxTechnique = (req, res) => {
-        /*
-         * Add the technique given in the request to the model.
-         * Check the incoming data! The book with the given id must exists,
-         * the id given in the path must match the id in the book, the book
-         * data must include all necessary properties (you can use
-         * checkBookProperties(res, req.body, parseInt(req.params.id))) to
-         * accomplish that.
-         *
-         * After you updated the book in the model, send back status 200.
-         */
 
         const id = parseInt(req.params.id);
 
-        if(!model.getRelaxTechnique(id)){
-            res.status(404).send('No book with id ${id} exists. Update not possible.');
+        if(!model.getRelaxTechnique(id)){//if no technique with an id
+            res.status(404).send(`No technique with id ${id} exists. Update not possible.`);
         } else {
-            const book = req.body;
-            if(this.checkRelaxTechniqueProperties(res, book, id)){
-                model.updateRelaxTechnique(id, book)
+            const relaxTechnique = req.body;
+            if(this.checkRelaxTechniqueProperties(res, relaxTechnique, id)){
+                model.updateRelaxTechnique(id, relaxTechnique)
                 res.sendStatus(200);
             }
         }
@@ -108,7 +91,7 @@ class RelaxController {
          */
         const id = parseInt(req.params.id);
         if(!model.getRelaxTechnique(id)){
-            res.status(404).send('No technique with id ${id} exists. Delete not possible.');
+            res.status(404).send(`No technique with id ${id} exists. Delete not possible.`);
         } else {
             model.deleteRelaxTechnique(id);
             res.sendStatus(204);
