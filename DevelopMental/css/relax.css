@@ -78,6 +78,16 @@ p {
     text-align: center;
 }
 
+p #break {
+
+    margin-top: 300px;
+}
+
+h2 {
+
+    padding-top: 250px;
+}
+
 @media (min-width: 900px) {
 
     p {
@@ -88,24 +98,32 @@ p {
         margin: 0 300px 0 300px;
         text-align: center;
     }
-}
+
 
 #nav-relax {
 
     font-family: "Roboto", sans-serif;
-    display: inline;
+    color: #4e555b;
+    display: inline-flex;
     list-style-type: none;
-
+    font-size: 20px;
+    padding-top: 50px;
+    transition: 0.4s;
+    text-align: center;
 
 
 }
-
-li {
-    float: left;
 }
 
-a {
-    display: block;
-    padding: 8px;
-    background-color: #dddddd;
+#nav-relax li {
+
+    padding-right: 50px;
+    text-align: center;
+    color: #555;
 }
+
+#nav-relax ul li {
+
+    text-align: center;
+}
+
