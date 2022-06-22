@@ -110,6 +110,7 @@ h2 {
     padding-top: 50px;
     transition: 0.4s;
     text-align: center;
+    align-self: center;
 
 
 }
@@ -125,5 +126,12 @@ h2 {
 #nav-relax ul li {
 
     text-align: center;
+}
+a{
+    color: #4e555b;
+}
+a:hover{
+    font-weight: bold;
+    color:#71c55d;
 }
 
