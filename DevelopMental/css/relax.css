@@ -1,28 +1,18 @@
-
-
 /*--------------------------------------------------------------
-# Progressive Muscle Relaxation Playlist
+# Youtube Video
 --------------------------------------------------------------*/
-/*  Edited with:
-    https://stackoverflow.com/questions/22433616/how-can-i-align-youtube-embedded-video-in-the-center-in-bootstrap */
 
-.PMR-container {
+.video-container {
     display: block;
-    width: 800px; /* you have to have a size or this method doesn't work */
-    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    width: 350px; /* you have to have a size or this method doesn't work */
+    height: 196px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #505050;
+    border: 10px solid #71c55d;
 }
-/*--------------------------------------------------------------
-# Autogenic Training Relaxation Playlist
---------------------------------------------------------------*/
 
-.AT-container {
-    display: block;
-    width: 800px; /* you have to have a size or this method doesn't work */
-    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
-    margin: 150px auto auto;
-    border: 10px solid #505050;;
+.yt-video{
+    width: 330px;
+    height: 176px;
 }
 
 /*--------------------------------------------------------------
@@ -31,9 +21,91 @@
 
 .youtube-container {
     display: block;
-    width: 800px; /* you have to have a size or this method doesn't work */
-    height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+    width: 350px; /* you have to have a size or this method doesn't work */
+    height: 196px; /* think about making these max-width instead - might give you some more responsiveness */
     margin: 150px auto auto;
-    border: 10px solid #505050;
+    border: 10px solid #71c55d;
 }
 
+
+/*--------------------------------------------------------------
+# Youtube Video
+--------------------------------------------------------------*/
+@media (min-width: 900px) {
+
+    .video-container {
+        display: block;
+        width: 800px; /* you have to have a size or this method doesn't work */
+        height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+        margin: 150px auto auto;
+        border: 10px solid #71c55d;
+    }
+
+    .yt-video{
+        width: 780px;
+        height: 430px;
+    }
+
+/*--------------------------------------------------------------
+ # Youtube Music Container
+--------------------------------------------------------------*/
+
+    .youtube-container {
+        display: block;
+        width: 800px; /* you have to have a size or this method doesn't work */
+        height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
+        margin: 150px auto auto;
+        border: 10px solid #71c55d;
+    }
+}
+
+
+h2 {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 45px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0 5px 0 5px;
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+
+    p {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+        margin: 0 300px 0 300px;
+        text-align: center;
+    }
+}
+
+#nav-relax {
+
+    font-family: "Roboto", sans-serif;
+    display: inline;
+    list-style-type: none;
+
+
+
+}
+
+li {
+    float: left;
+}
+
+a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+}

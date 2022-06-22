@@ -120,10 +120,9 @@ class RelaxTechniqueSection {
             .appendTo(document.querySelector(`section#${category.name}`));
 
         document.getElementById("div-video-"+relaxTechnique.name).className = "video-container";
+        document.getElementById("iframe-video-"+relaxTechnique.name).className = "yt-video";
 
         let iframe = document.getElementById("iframe-video-"+relaxTechnique.name);
-        iframe.setAttribute("width","780");
-        iframe.setAttribute("height","430");
         iframe.setAttribute("src",relaxTechnique.video);
         iframe.setAttribute("title","Youtube Video Player");
         iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;");
