@@ -192,23 +192,4 @@ model.addRelaxTechnique(atCategory, new RelaxTechnique("AT1", "<br>Autogenic Tra
     "           please discontinue and consult a professional Autogenic Training instructor or your doctor.\n" +
     "     <br>Source: https://services.unimelb.edu.au/counsel/resources/guided-exercises/autogenic-training<br><br>"));
 
-const relaxMusic = new Category( "Relaxing Music", "RM",);
-model.addCategory(relaxMusic);
-model.addRelaxTechnique(relaxMusic, new RelaxTechnique("RM1", "<br>Relaxing music for your break<br> ", "<script>\n" +
-    "    fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&order=relevance&q=relaxation_music&regionCode=AT&type=video&videoEmbeddable=true&key=AIzaSyC07Y-J5kpjl3RlLt9vzOfGJ4SdGAixiyQ')\n" +
-    "        .then((data) => {\n" +
-    "            return data.json();\n" +
-    "        }).then((result) => {\n" +
-    "        console.log(result.items);\n" +
-    "        let videos = result.items;\n" +
-    "        let videoContainer = document.querySelector(\".youtube-container\"); //video container created\n" +
-    "        for (let video of videos) { // for each\n" +
-    "            videoContainer.innerHTML += `\n" +
-    "        <iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/${video.id.videoId}\"\n" +
-    "        title=\"YouTube video player\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media;\n" +
-    "        gyroscope; picture-in-picture\" allowfullscreen></iframe>\n" +
-    "        <p></p>`;\n" +
-    "        }\n" +
-    "    })</script>", "<p>If you want to make your own break schedule, <br> here is some relaxing music for you.</p>" ));
-
 module.exports = model;
