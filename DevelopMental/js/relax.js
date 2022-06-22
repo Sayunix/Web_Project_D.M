@@ -108,9 +108,9 @@ class RelaxTechniqueSection {
         new ElementCreator("article")
             .id(relaxTechnique.id)
             .append(new ElementCreator("div")
-                .id("div-video-"+relaxTechnique.name)
+                .id("div-video")
                 .append(new ElementCreator("iframe")
-                    .id("iframe-video-"+relaxTechnique.name)))
+                    .id("iframe-video")))
             .append(new ElementCreator("h2")
                 .id("h2-technique-"+relaxTechnique.name)
                 .text(relaxTechnique.title))
@@ -119,10 +119,10 @@ class RelaxTechniqueSection {
                 .text(relaxTechnique.text))
             .appendTo(document.querySelector(`section#${category.name}`));
 
-        document.getElementById("div-video-"+relaxTechnique.name).className = "video-container";
-        document.getElementById("iframe-video-"+relaxTechnique.name).className = "yt-video";
+        document.getElementById("div-video").className = "video-container";
+        document.getElementById("iframe-video").className = "yt-video";
 
-        let iframe = document.getElementById("iframe-video-"+relaxTechnique.name);
+        let iframe = document.getElementById("iframe-video");
         iframe.setAttribute("src",relaxTechnique.video);
         iframe.setAttribute("title","Youtube Video Player");
         iframe.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;");
@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 new ElementCreator("li")
                     .append(new ElementCreator("a")
+                        .id("link-"+category.name)
                         .with("href", `#${category.name}`)
                         .text(category.title)
                         .listener("click",() => {
