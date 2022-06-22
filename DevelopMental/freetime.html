@@ -18,6 +18,7 @@
 
     <!-- Libraries CSS Files -->
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Logo Animation CSS Files -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -25,11 +26,8 @@
     <!-- Main Stylesheet Files -->
     <link href="css/style.css" rel="stylesheet">
 
+    <!-- API -->
     <link href="css/freetime.css" rel="stylesheet">
-    <script src="freetime.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            intergrity="sha256-FgpCb/KJQlLnfOu91ta32o/NMZxltwRoBQtmkMRdAu8="
-            crossorigin="anonymous"></script>
 
 </head>
 
@@ -73,15 +71,17 @@
         <!-- Template Main Javascript File -->
         <script src="js/main.js"></script>
 
+
+
         <main>
 
             <!-- weather api -->
             <div class="weather-container">
-                <img class="icon">
-                <p class="weather"></p>
-                <p class="temp"></p>
+                <div id="temp"></div>
+                <div id="feels_like"></div>
             </div>
 
+            <script src="js/freetime.js" type="module"></script>
 
             <br>
             <br>
@@ -129,21 +129,7 @@
         <script src="lib/modal-video/js/modal-video.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/wow/wow.min.js"></script>
-        <script>
-            fetch('https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&order=relevance&q=relaxation_music&regionCode=AT&type=video&videoEmbeddable=true&key=AIzaSyC07Y-J5kpjl3RlLt9vzOfGJ4SdGAixiyQ')
-                .then((data) => {
-                    return data.json();
-                }).then((result) => {
-                console.log(result.items);
-                let videos = result.items;
-                let videoContainer = document.querySelector(".youtube-container"); //video container erstellt
-                for (let video of videos) { // for each
-                    videoContainer.innerHTML += `
-        <iframe width="560" height="400" src="https://www.youtube.com/embed/${video.id.videoId}" title="YouTube video player"
-        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p></p>`
-                }
-            })</script>
+
 
         <!-- Template Main Javascript File -->
         <script src="js/main.js"></script>
