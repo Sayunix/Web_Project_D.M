@@ -84,7 +84,14 @@ p #break {
 }
 
 h2 {
-    padding-top: 250px;
+    padding-top: 25px;
+}
+
+#nav-relax{
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @media (min-width: 900px) {

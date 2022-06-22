@@ -192,4 +192,5 @@ model.addRelaxTechnique(atCategory, new RelaxTechnique("AT1", "<br>Autogenic Tra
     "           please discontinue and consult a professional Autogenic Training instructor or your doctor.\n" +
     "     <br>Source: https://services.unimelb.edu.au/counsel/resources/guided-exercises/autogenic-training<br><br>"));
 
+
 module.exports = model;
