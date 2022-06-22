@@ -157,9 +157,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
         });
+        let id = 1;
 
-
-
-
+        let main = document.getElementById('relax-main');
+        new ElementCreator("Button")
+            .text("delete")
+            .appendTo(main)
+            .listener("click", () => {
+                fetch('/api/categories/:category/relaxTechniques/'+id , {
+                    method: "DELETE"
+            })
+            .then(response => response.json())
+            .then(categories => {
+                for(const category of Array.from(categories).reverse()) {
+                    const list = document.getElementById("nav-relax");
+    
+                    new ElementCreator("li")
+                        .append(new ElementCreator("a")
+                            .id("link-"+category.name)
+                            .with("href", `#${category.name}`)
+                            .text(category.title)
+                            .listener("click",() => {
+                                fetch(`/api/categories/${category.name}/relaxTechniques`)
+                                    .then(response => response.json())
+                                    .then(relaxTechniques => {
+                                        relaxTechniqueSection.addToDOM(category, relaxTechniques);
+                                    });
+                            }))
+                        .prependTo(list);
+                        id++;
+                }})
+                
+    
 });
-
+})
