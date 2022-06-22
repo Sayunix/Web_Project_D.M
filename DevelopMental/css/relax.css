@@ -6,7 +6,7 @@
     display: block;
     width: 350px; /* you have to have a size or this method doesn't work */
     height: 196px; /* think about making these max-width instead - might give you some more responsiveness */
-    margin: 150px auto auto;
+    margin: 25px auto auto;
     border: 10px solid #71c55d;
 }
 
@@ -37,7 +37,7 @@
         display: block;
         width: 800px; /* you have to have a size or this method doesn't work */
         height: 450px; /* think about making these max-width instead - might give you some more responsiveness */
-        margin: 150px auto auto;
+        margin: 25px auto auto;
         border: 10px solid #71c55d;
     }
 
@@ -84,7 +84,6 @@ p #break {
 }
 
 h2 {
-
     padding-top: 250px;
 }
 
@@ -111,8 +110,7 @@ h2 {
     transition: 0.4s;
     text-align: center;
     align-self: center;
-
-
+    justify-content: center;
 }
 }
 
@@ -131,7 +129,10 @@ a{
     color: #4e555b;
 }
 a:hover{
-    font-weight: bold;
     color:#71c55d;
 }
 
+h1{
+    margin-top: 100px;
+    text-align: center;
+}
