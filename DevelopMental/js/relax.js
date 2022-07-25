@@ -155,16 +155,16 @@ const putData = {name: 'changed name',
     id: 2
 }
 
-async function putIt() {
-    const response = await fetch('http://localhost:5000/api/categories/AT/relaxTechniques/2', {
+function putIt() {
+    fetch('http://localhost:5000/api/categories/AT/relaxTechniques/2', {
         method: "PUT",
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(putData)
     })
-        .then(response => {
-        return response.json( )
+        .then(res => {
+        return res.json( )
     })
         .then(data =>
             console.log(data),
