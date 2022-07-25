@@ -131,6 +131,49 @@ class RelaxTechniqueSection {
 
 }
 
+function deleteIt() {
+    fetch('http://localhost:5000/api/categories/PMR/relaxTechniques/1', {
+        method: "DELETE",
+    })
+        .then(res => {
+            if (res.ok) {
+                console.log("DELETE request successful");
+                return res
+            } else {
+                console.log("DELETE request unsuccessful");
+            }
+            return res
+        })
+        .catch(error => console.log(error))
+    location.reload();
+}
+
+const putData = {name: 'changed name',
+    title: 'changed Title',
+    video: 'https://www.youtube.com/embed/videoseries?list=PL-yvVpWvnO7Z8H5zkeI_RDu75RjaU_Tq2',
+    text: 'changed Text',
+    id: 2
+}
+
+async function putIt() {
+    const response = await fetch('http://localhost:5000/api/categories/AT/relaxTechniques/2', {
+        method: "PUT",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(putData)
+    })
+        .then(response => {
+        return response.json( )
+    })
+        .then(data =>
+            console.log(data),
+            location.reload()
+        );
+
+
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
 
     const relaxTechniqueSection = new RelaxTechniqueSection ();
@@ -157,37 +200,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
         });
-        let id = 1;
-
-        let main = document.getElementById('relax-main');
-        new ElementCreator("Button")
-            .text("delete")
-            .appendTo(main)
-            .listener("click", () => {
-                fetch('/api/categories/:category/relaxTechniques/'+id , {
-                    method: "DELETE"
-            })
-            .then(response => response.json())
-            .then(categories => {
-                for(const category of Array.from(categories).reverse()) {
-                    const list = document.getElementById("nav-relax");
-    
-                    new ElementCreator("li")
-                        .append(new ElementCreator("a")
-                            .id("link-"+category.name)
-                            .with("href", `#${category.name}`)
-                            .text(category.title)
-                            .listener("click",() => {
-                                fetch(`/api/categories/${category.name}/relaxTechniques`)
-                                    .then(response => response.json())
-                                    .then(relaxTechniques => {
-                                        relaxTechniqueSection.addToDOM(category, relaxTechniques);
-                                    });
-                            }))
-                        .prependTo(list);
-                        id++;
-                }})
-                
-    
-});
 })
